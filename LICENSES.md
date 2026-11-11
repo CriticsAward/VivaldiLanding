@@ -70,3 +70,15 @@
 - [Amici dell’Istituto Italiano Antonio Vivaldi](https://amicidivivaldi.it/storia/): в 1926 году Альберто Джентили исследовал собрание колледжа San Carlo в Borgo San Martino и обнаружил множество автографов Вивальди; приобретение рукописей для Турина продолжалось в 1927–1930 годах.
 - [Biblioteca Nazionale Universitaria di Torino](https://bnuto.cultura.gov.it/areastampa/marzo-con-vivaldi/): в конце 1926 года колледж обратился за оценкой рукописей. Не смешиваем дату находки с последующими приобретениями.
 - [История собраний Foà и Giordano](https://bnuto.cultura.gov.it/en/collections/foa-collection-giordano-collection/): сохранение рукописей через частные коллекции после смерти композитора.
+
+
+## Источники расширенной биографии и технических решений
+
+- [Michael Talbot, Treccani — биография](https://www.treccani.it/enciclopedia/antonio-vivaldi_(Dizionario-Biografico)/): отец Джованни Баттиста, скрипач Сан-Марко; обучение Антонио; отъезд в Вену летом 1740 года, сорванные театральные планы после смерти Карла VI, смерть в 1741 году. Точный день смерти на сайте не указан: источники расходятся между 27 и 28 июля.
+- [Boston Baroque — L’estro armonico](https://baroque.boston/vivaldi-op-3): Амстердам, Этьен Роже, 1711; двенадцать концертов; европейское распространение и переложения Баха.
+- [Teatro La Fenice — Ottone in villa](https://www.teatrolafenice.it/en/event/ottone-in-villa/): первая опера, Виченца, 1713.
+- [Teatro La Fenice — Griselda](https://www.teatrolafenice.it/en/event/griselda-vivaldi/): постановка в Венеции в 1735 году, продолжение оперной работы после «Времён года».
+- [Paul Everett, Chamber Music Society](https://www.chambermusicsociety.org/about-the-music/composers/antonio-vivaldi): музыкальное обучение у отца, профессиональное становление и венские трудности. Дата обнаружения рукописей взята из опубликованных выше материалов Туринской библиотеки и Института Вивальди, а не из обобщённой формулировки этой статьи о 1930-х годах.
+- [Web Animations: currentTime](https://developer.mozilla.org/en-US/docs/Web/API/Animation/currentTime): приостановленные анимации новых предметных композиций управляются прокруткой.
+
+Новые сцены используют уже атрибутированные изображения Венеции, скрипки и рукописи. Два инструмента — графическая метафора обучения, не исторические портреты отца и сына. Печатные листы — графическая интерпретация распространения музыки, а не заявленная репродукция титульного листа Op. 3. Новые аудиозаписи не добавлены, лицензии семи исходных файлов сохранены.
