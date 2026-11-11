@@ -36,3 +36,9 @@ Attribution: Antonio Vivaldi (composition); John Harrison (violin performance an
 - Chamber Music Society of Lincoln Center, биография Вивальди и сведения о рукописях, найденных в 1930-х: https://www.chambermusicsociety.org/about-the-music/composers/antonio-vivaldi
 - Biblioteca Nazionale Universitaria di Torino, история коллекций Foà и Giordano (1922–1930): https://bnuto.cultura.gov.it/en/collections/foa-collection-giordano-collection/
 - Treccani, биография и первые занятия музыкой с отцом: https://www.treccani.it/enciclopedia/antonio-vivaldi/
+
+
+## Шрифты
+
+- Literata — разработка TypeTogether для Google Fonts, лицензия SIL Open Font License 1.1: https://fonts.google.com/specimen/Literata
+- Unbounded — разработка Julia Gonina для Google Fonts, лицензия SIL Open Font License 1.1: https://fonts.google.com/specimen/Unbounded

@@ -22,4 +22,4 @@ The experience is staged as one continuous Baroque theatre: the opening portrait
 
 ## Living Composition cut
 
-Six story episodes and three peaks (Venice becoming score, the four-season cycle, and the manuscript return) are designed for a compact scroll. The seasonal rail is approximately 3.6 viewport-heights; surrounding scenes are shorter. The repeated red string changes from city trajectory to musical line and returns in the epilogue.
+Six story episodes and three peaks (Venice becoming score, the four-season cycle, and the manuscript return) are designed for a compact scroll. The seasonal rail is approximately 3.6 viewport-heights; surrounding scenes are shorter. The city, concert, and rediscovery peaks each modulate the persistent image layers and light. The repeated red string changes from city trajectory to musical line and returns in the epilogue.
