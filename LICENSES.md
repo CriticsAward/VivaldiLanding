@@ -63,3 +63,10 @@
 - [Nashville Symphony: Gloria RV 589](https://www.nashvillesymphony.org/classical-program-notes/antonio-vivaldi-gloria-r-589/): инструментальные концерты, оперное и духовное творчество; Gloria ориентировочно 1715–1716.
 - [Teatro La Fenice: Griselda](https://www.teatrolafenice.it/en/event/griselda-vivaldi/): опера 1735 года подтверждает продолжение оперного творчества после публикации Op. 8.
 - [Chamber Music Society of Lincoln Center: Vivaldi](https://chambermusicsociety.org/about-the-music/composers/antonio-vivaldi): концерты разных типов и вокальное творчество.
+
+
+## Находка рукописей: уточнение 1926 года
+
+- [Amici dell’Istituto Italiano Antonio Vivaldi](https://amicidivivaldi.it/storia/): в 1926 году Альберто Джентили исследовал собрание колледжа San Carlo в Borgo San Martino и обнаружил множество автографов Вивальди; приобретение рукописей для Турина продолжалось в 1927–1930 годах.
+- [Biblioteca Nazionale Universitaria di Torino](https://bnuto.cultura.gov.it/areastampa/marzo-con-vivaldi/): в конце 1926 года колледж обратился за оценкой рукописей. Не смешиваем дату находки с последующими приобретениями.
+- [История собраний Foà и Giordano](https://bnuto.cultura.gov.it/en/collections/foa-collection-giordano-collection/): сохранение рукописей через частные коллекции после смерти композитора.

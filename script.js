@@ -6,7 +6,7 @@ const names=['spring','summer','autumn','winter'],labels=['La Follia · RV 63','
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 let geometry=[],raf=0,current=-1,currentTrack=0,musicEpisode=0,visualSeason=-1,seasonLocal=0,enabled=false,graph=null,gains=[],analyser=null,audioData=null,active=-1,request=0,pauseTimers=[0,0],weatherRAF=0,lastFrame=0,level=0,particles=[],audioRAF=0,lastAudioSample=0;
 media.forEach((a,i)=>{a.loop=true;a.preload=i===0?'auto':'none';a.playsInline=true});
-function measure(){geometry=episodes.map(node=>{const stage=node.querySelector('.stage');return{node,top:node.getBoundingClientRect().top+scrollY,height:node.offsetHeight,stageHeight:stage.offsetHeight}});resizeWeather();schedule()}
+function measure(){geometry=episodes.map(node=>{const stage=node.querySelector('.stage');return{node,top:node.getBoundingClientRect().top+scrollY,height:node.offsetHeight,stageHeight:stage.offsetHeight}});measureHistory();resizeWeather();schedule()}
 function schedule(){if(!raf)raf=requestAnimationFrame(render)}
 function render(){
  raf=0;const y=scrollY,vh=innerHeight;const max=root.scrollHeight-vh;document.querySelector('.journey i').style.height=`${clamp(y/max)*100}%`;
@@ -14,10 +14,9 @@ function render(){
   if(y+vh<top||y>top+height)return;
   const p=clamp((y-top)/Math.max(1,height-stageHeight));node.style.setProperty('--p',p.toFixed(4));node.style.setProperty('--turn',Math.sin(p*Math.PI*2).toFixed(4));
   if(node.classList.contains('venice')){const show=p>.48;node.classList.toggle('is-pieta',show);node.style.setProperty('--pieta',clamp((p-.35)/.25).toFixed(4));toggleBeat(node.querySelector('.priest'),!show);toggleBeat(node.querySelector('.pieta'),show)}
-  if(node.classList.contains('return')){
-   const arrival=clamp((p-.12)/.7),found=p>.48;
-   node.style.setProperty('--arrival',arrival.toFixed(4));node.style.setProperty('--scatter',(1-arrival).toFixed(4));node.classList.toggle('is-returned',found);
-   toggleBeat(node.querySelector('.last-years'),!found);toggleBeat(node.querySelector('.rediscovery'),found);node.querySelector('.archive-year').textContent=found?'1926':'1741';
+  if(node.classList.contains('return')||node.classList.contains('rediscovery')){
+   const arrival=node.classList.contains('rediscovery')?clamp((y+vh*.78-top)/(vh*.78)):0;
+   node.style.setProperty('--arrival',arrival.toFixed(4));node.style.setProperty('--scatter',(1-arrival).toFixed(4));
   }
  });
  const g=geometry.find(g=>g.node===year),travel=Math.max(1,g.height-g.stageHeight),p=clamp((y-g.top)/travel);
@@ -43,17 +42,20 @@ function render(){
 }
 const history=document.querySelector('.history'),historyButtons=[...history.querySelectorAll('button')],indicator=document.querySelector('.chapter-indicator');
 const chapterNames=['Пролог','Венеция','Скрипка и оркестр','Четыре времени года','Наследие разных лет','Последние годы','Возвращение музыки','Эпилог'];
-let lastChapter=-1;
+let lastChapter=-1,stringLength=0,historyMarks=[];
+const historyPath=history.querySelector('.history-drawn');
 function updateHistory(y,vh,max){
  const anchor=y+vh*.35;let scene=geometry[0];for(const g of geometry)if(g.top<=anchor)scene=g;
- const name=scene.node.dataset.episode,p=clamp((y-scene.top)/Math.max(1,scene.height-scene.stageHeight));
- const chapter=name==='return'?(p>.48?6:5):name==='epilogue'?7:geometry.indexOf(scene);
+ const chapter=geometry.indexOf(scene);
  if(chapter!==lastChapter){lastChapter=chapter;indicator.querySelector('span').textContent=`${String(chapter+1).padStart(2,'0')} / 08`;indicator.querySelector('b').textContent=chapterNames[chapter];history.querySelector('.history-chapter').textContent=chapterNames[chapter];
  const point=[0,1,-1,2,-1,3,4,4][chapter];history.classList.toggle('is-thematic',point<0);historyButtons.forEach((b,i)=>{if(i===point)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});}
- const marks=historyButtons.map((b,i)=>{const g=geometry.find(g=>g.node.dataset.episode===b.dataset.target);return{y:g.top+(g.height-g.stageHeight)*Number(b.dataset.phase),x:[.06,.27,.5,.74,.94][i]}});marks.push({y:max,x:1});let progress=.06;
+ const marks=[...historyMarks,{y:max,x:1}];let progress=.06;
  for(let i=0;i<marks.length-1;i++){const a=marks[i],b=marks[i+1];if(y>=a.y)progress=a.x+(b.x-a.x)*clamp((y-a.y)/Math.max(1,b.y-a.y));}
- history.style.setProperty('--history-progress',progress.toFixed(4));
+ // Use measured SVG units. Unitless CSS calc and pathLength normalization differed across browsers.
+ historyPath.style.strokeDashoffset=String(stringLength*(1-progress));
+
 }
+function measureHistory(){stringLength=historyPath.getTotalLength();historyPath.style.strokeDasharray=`${stringLength} ${stringLength}`;historyMarks=historyButtons.map((b,i)=>{const g=geometry.find(g=>g.node.dataset.episode===b.dataset.target);return{y:g.top,x:[.06,.27,.5,.74,.94][i]}})}
 historyButtons.forEach(b=>b.addEventListener('click',()=>{const g=geometry.find(g=>g.node.dataset.episode===b.dataset.target);window.scrollTo({top:g.top+(g.height-g.stageHeight)*Number(b.dataset.phase),behavior:reduce.matches?'instant':'smooth'})}));
 function toggleBeat(node,visible){node.inert=!visible;node.setAttribute('aria-hidden',String(!visible))}
 addEventListener('scroll',schedule,{passive:true});addEventListener('resize',measure,{passive:true});document.fonts.ready.then(measure);addEventListener('load',measure,{once:true});measure();
