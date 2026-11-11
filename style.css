@@ -52,3 +52,4 @@
 @media(max-width:360px){.year-intro{padding-left:6vw;padding-right:6vw}.year-intro h2{font-size:clamp(3.3rem,13vw,4.4rem)}.year-intro h2 span:nth-child(2){font-size:.63em;margin-left:5vw}.year-intro h2 em{font-size:.7em;margin-left:13vw}.year-intro-copy{gap:4vh}.year-intro-copy>p{width:82%;font-size:15px}}
 .opening-role{position:absolute;left:10vw;top:20%;font:7px var(--sans);letter-spacing:.18em;color:#d3aa6b99}
 @media(max-width:700px){.opening-role{left:8vw;top:19%;font-size:6px;letter-spacing:.12em}}
+@media(min-width:701px){.year-intro h2 span:nth-child(2){font-size:.62em;white-space:nowrap}}
