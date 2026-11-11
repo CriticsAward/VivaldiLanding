@@ -42,3 +42,7 @@ Attribution: Antonio Vivaldi (composition); John Harrison (violin performance an
 
 - Literata — разработка TypeTogether для Google Fonts, лицензия SIL Open Font License 1.1: https://fonts.google.com/specimen/Literata
 - Unbounded — разработка Julia Gonina для Google Fonts, лицензия SIL Open Font License 1.1: https://fonts.google.com/specimen/Unbounded
+
+## Производные материалы этой версии
+
+`assets/violin-cutout.webp` — вырезанный вариант приведённой выше фотографии скрипки Joseph Klotz 1794 года. Фон удалён с помощью ImageGen; объект используется как художественная иллюстрация скрипичного концерта, а не как изображение личного инструмента Вивальди. Исходная фотография сохранена. Архитектурная арка, музыкальные траектории и атмосферная графика созданы в SVG/CSS/Canvas специально для сайта.
