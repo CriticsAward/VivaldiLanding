@@ -1,0 +1,93 @@
+[
+  {
+    "file": "media/spring.mp3",
+    "bytes": 400652,
+    "sha256": "1eff4fd4e89a5823e8d94eb9535f26f04c5192687b836ac04ce2cdcba04e5411",
+    "seconds": 50.04,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "32000",
+      "channels": 1
+    },
+    "decode": 0,
+    "errors": ""
+  },
+  {
+    "file": "media/summer.mp3",
+    "bytes": 400652,
+    "sha256": "7fbb6ac04791383ae5e1e6175ec3b9b1f36679c75575402c810db82b210efb6b",
+    "seconds": 50.04,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "32000",
+      "channels": 1
+    },
+    "decode": 0,
+    "errors": ""
+  },
+  {
+    "file": "media/winter.mp3",
+    "bytes": 400652,
+    "sha256": "4d18bf954be2d2c01f8f30e9d3f4ebc1e5a9dce10bc9e8b21f8992e0b099ca0f",
+    "seconds": 50.04,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "32000",
+      "channels": 1
+    },
+    "decode": 0,
+    "errors": ""
+  },
+  {
+    "file": "media/gloria.mp3",
+    "bytes": 661034,
+    "sha256": "9dd08e46e046fe65e1651ad22b753cdbacfc35d34d5ba9a997963146a733386c",
+    "seconds": 55.04,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "44100",
+      "channels": 2
+    },
+    "decode": 0,
+    "errors": ""
+  },
+  {
+    "file": "media/concerto-522.mp3",
+    "bytes": 660778,
+    "sha256": "300452a079fd743c63be758b77ce9aae7f2679429aa9818b55b3a5fdf7419a3c",
+    "seconds": 55.013878,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "44100",
+      "channels": 2
+    },
+    "decode": 0,
+    "errors": ""
+  },
+  {
+    "file": "media/autumn.mp3",
+    "bytes": 400652,
+    "sha256": "04d03b3b262279fd996c4117e33a3c1dabd5ada50dc7b0aac1394b374587f06c",
+    "seconds": 50.04,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "32000",
+      "channels": 1
+    },
+    "decode": 0,
+    "errors": ""
+  },
+  {
+    "file": "media/follia.mp3",
+    "bytes": 540928,
+    "sha256": "425c1770f7dc0b22fee9dea97119c77bcc5313b9dcdf082326d19607a4f6b7a7",
+    "seconds": 45.035102,
+    "stream": {
+      "codec_name": "mp3",
+      "sample_rate": "44100",
+      "channels": 2
+    },
+    "decode": 0,
+    "errors": ""
+  }
+]

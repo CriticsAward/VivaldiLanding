@@ -7,3 +7,18 @@ run.onclick=async()=>{checks.length=0;const failures=[];for(const [width,height]
 const pick=document.createElement('select');pick.id='seasonPick';['Весна','Лето','Осень','Зима'].forEach((n,i)=>pick.add(new Option(n,i)));document.querySelector('header').append(pick);pick.onchange=()=>{const e=f.contentDocument.querySelector('.seasons');f.contentWindow.scrollTo({top:e.offsetTop+(e.offsetHeight-e.querySelector('.stage').offsetHeight)*(.12+Number(pick.value)*.25),behavior:'instant'})};
 
 const stress=document.createElement('button');stress.textContent='Быстрая прокрутка';document.querySelector('header').append(stress);stress.onclick=async()=>{const d=f.contentDocument,w=f.contentWindow,gaps=[],violations=[];let last=0;const max=d.documentElement.scrollHeight-w.innerHeight;for(let i=0;i<180;i++){await new Promise(r=>w.requestAnimationFrame(t=>{if(last)gaps.push(t-last);last=t;r()}));w.scrollTo({top:max*(i<90?i/89:(179-i)/89),behavior:'instant'});const panels=[...d.querySelectorAll('.season-panel')].filter(e=>w.getComputedStyle(e).visibility==='visible');if(panels.length!==1)violations.push(i)}gaps.sort((a,b)=>a-b);document.querySelector('output').textContent=JSON.stringify({frames:gaps.length,medianMs:gaps[Math.floor(gaps.length/2)],p95Ms:gaps[Math.floor(gaps.length*.95)],invalidSeasonStates:violations.length,width:w.innerWidth})};
+
+// These controls exercise the real sound button and scroll-selected program.
+f.addEventListener('load',()=>{
+ const w=f.contentWindow,d=f.contentDocument;let clicked=0;
+ d.querySelector('.sound').addEventListener('click',()=>{if(d.querySelector('.sound').getAttribute('aria-pressed')==='true')clicked=w.performance.now()});
+ d.querySelectorAll('audio').forEach(a=>a.addEventListener('playing',()=>{if(clicked){document.querySelector('output').textContent=JSON.stringify({firstPlayLatencyMs:Math.round(w.performance.now()-clicked),source:a.currentSrc});clicked=0}}));
+});
+const audioRun=document.createElement('button');audioRun.textContent='Проверить 7 треков';document.querySelector('header').append(audioRun);
+audioRun.onclick=async()=>{
+ const w=f.contentWindow,d=f.contentDocument,rows=[];
+ if(d.querySelector('.sound').getAttribute('aria-pressed')!=='true'){document.querySelector('output').textContent='Сначала нажмите настоящую кнопку звука в начале сайта.';return}
+ const points=[['prologue',0,0],['venice',.8,0],['concert',.5,1],['seasons',.12,2],['seasons',.37,3],['seasons',.62,4],['seasons',.87,5],['return',1,6],['epilogue',0,6],['seasons',.62,4],['concert',.5,1],['prologue',0,0]];
+ for(const [scene,phase,track] of points){const e=d.querySelector('[data-episode='+scene+']');w.scrollTo({top:e.offsetTop+(e.offsetHeight-e.querySelector('.stage').offsetHeight)*phase,behavior:'instant'});await new Promise(r=>setTimeout(r,1200));const playing=[...d.querySelectorAll('audio')].filter(a=>!a.paused);rows.push({scene,phase,expected:track,desired:d.documentElement.dataset.musicTrack,playing:playing.map(a=>({track:Number(a.dataset.track),time:Number(a.currentTime.toFixed(2)),ready:a.readyState})),energy:Number(d.documentElement.dataset.audioEnergy),pass:playing.length===1&&Number(playing[0].dataset.track)===track&&playing[0].currentTime>0&&playing[0].readyState===4})}
+ document.querySelector('output').textContent=JSON.stringify({audioChecks:rows.length,failures:rows.filter(x=>!x.pass),rows});
+};

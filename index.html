@@ -6,21 +6,22 @@
 <title>Vivaldi — живая композиция</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Unbounded:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10"><script defer src="script.js?v=10"></script>
+<link rel="stylesheet" href="style.css?v=11"><script defer src="script.js?v=11"></script>
 </head>
 <body>
 <a class="skip" href="#venice">К истории</a>
 <a class="monogram" href="#prologue" aria-label="В начало">A·V</a>
 <button class="sound" type="button" aria-label="Включить музыкальное сопровождение" aria-pressed="false"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 11h5l6-5v16l-6-5H4z"/><path class="wave" d="M18 10q5 4 0 8m3-11q8 7 0 14"/><path class="mute" d="m18 11 6 6m0-6-6 6"/></svg><span>ЗВУК</span></button>
-<div class="sound-hint">Одно нажатие —<br>и сезоны зазвучат</div>
+<div class="now-playing" aria-hidden="true"><span></span></div>
+<div class="sound-hint">Нажми — и музыка<br>начнётся сразу</div>
 <div class="journey" aria-hidden="true"><i></i></div>
 <main>
 <section class="episode prologue" id="prologue" data-episode="prologue" aria-labelledby="prologue-title">
  <div class="stage">
   <div class="art hero-art" aria-hidden="true"><div class="hero-halo"></div><img class="hero-portrait" src="assets/portrait.webp" alt="" fetchpriority="high"><div class="hero-slit"></div><svg class="string hero-string" viewBox="0 0 400 800" preserveAspectRatio="none"><path d="M-40 690 Q 190 390 450 80"/></svg></div>
   <div class="hero-eyebrow"><span>ЖИВАЯ КОМПОЗИЦИЯ</span><span>ВЕНЕЦИЯ → ВЕСЬ МИР</span></div>
-  <h1 id="prologue-title"><span>Антонио</span><em>Vivaldi</em></h1>
-  <div class="hero-foot"><p class="dates">1678 <i>—</i> 1741</p><p>Композитор. Скрипач. Педагог.<br>Человек, который услышал движение.</p></div>
+  <h1 id="prologue-title" aria-label="Антонио Вивальди"><span>Антонио</span><em>Vivaldi</em></h1>
+  <div class="hero-foot"><p class="dates">1678 <i>—</i> 1741</p><div><p class="hero-role">Скрипач. Композитор. Священник.</p><p>Он заставил оркестр изображать грозу, ветер и пение птиц.</p><p>И это лишь небольшая часть его музыки.</p></div></div>
   <a class="scroll-cue" href="#venice">Проведи вниз <span>↓</span></a>
  </div>
 </section>
@@ -28,28 +29,29 @@
  <div class="stage">
   <div class="art city-art" aria-hidden="true"><img class="city-image" src="assets/venice.webp" alt="" loading="eager"><div class="city-reflection"></div><svg class="city-portal" viewBox="0 0 400 800" preserveAspectRatio="none"><path class="arch" d="M-30 800V210 Q200-95 430 210V800M15 800V225Q200-35 385 225V800"/><path class="city-staves" d="M-20 200Q200 120 430 200 M-20 215Q200 135 430 215 M-20 230Q200 150 430 230 M-20 245Q200 165 430 245 M-20 260Q200 180 430 260"/></svg><div class="city-date">1703</div></div>
   <span class="episode-label">I / ГОРОД И ЧЕЛОВЕК</span>
-  <div class="copy city-copy"><h2 id="venice-title">Вода.<br>Камень.<br><em>Красный.</em></h2><p>Венеция, 1678. Первые уроки — у отца, скрипача собора Сан-Марко.</p><p>В 1703 году Вивальди принимает сан. Рыжие волосы дают ему имя <em>Il Prete Rosso</em> — «Красный священник».</p><p>В Ospedale della Pietà он учит воспитанниц скрипке. Их ансамбль становится его живой музыкальной лабораторией.</p></div>
-  <span class="scene-note">КАНАЛ СТАНОВИТСЯ СТРОКОЙ ПАРТИТУРЫ</span>
+  <div class="pieta-gallery art" aria-hidden="true"><svg viewBox="0 0 500 300"><defs><g id="chorister"><path d="M-32 280L-21 160Q-25 131-13 120Q-28 102-17 82Q0 64 16 83Q28 104 12 121Q28 130 24 164L38 280Z" fill="#bda38b"/><path d="M-44 153L38 124M-32 142L31 162" stroke="#e0c7a2" stroke-width="3"/><path d="M-43 85V24Q0-24 43 24V280H-43Z" fill="none" stroke="#a89074"/></g></defs><use href="#chorister" x="52"/><use href="#chorister" x="151"/><use href="#chorister" x="250"/><use href="#chorister" x="349"/><use href="#chorister" x="448"/></svg><div class="pieta-grille"></div></div>
+  <div class="copy city-copy"><div class="city-beat priest"><h2 id="venice-title">Священник<br><em>со скрипкой</em></h2><p>Венеция, 1703 год.</p><p>В 25 лет Вивальди принимает священный сан. Из-за рыжих волос его прозовут <em>Il Prete Rosso</em>, «Красный священник».</p><p>Но главным делом его жизни станет музыка.</p></div><div class="city-beat pieta"><h2>Оркестр,<br>который удивлял<br><em>Венецию</em></h2><p>В Ospedale della Pietà Вивальди преподавал скрипку воспитанницам учреждения.</p><p>Здесь действовали известные оркестр и хор, а сам композитор писал музыку для их исполнения.</p></div></div>
+  <span class="scene-note">ВЕНЕЦИЯ · OSPEDALE DELLA PIETÀ</span>
  </div>
 </section>
 <section class="episode concert" id="concert" data-episode="concert" aria-labelledby="concert-title">
  <div class="stage">
   <div class="art concert-art" aria-hidden="true"><div class="concert-orbit"></div><img class="solo-violin" src="assets/violin-cutout.webp" alt="" loading="eager"><div class="orchestra"><i></i><i></i><i></i><i></i><i></i></div><svg class="dialogue" viewBox="0 0 400 800" preserveAspectRatio="none"><path class="solo-line" d="M-40 270 C100 270 110 80 190 270 S300 450 450 270"/><path class="tutti-line" d="M-40 310 C100 310 110 500 190 310 S300 130 450 310"/><path class="tutti-line echo" d="M-40 330 C100 330 110 520 190 330 S300 150 450 330"/></svg></div>
   <span class="episode-label">II / ДИАЛОГ</span><div class="musical-roles" aria-hidden="true"><span>solo</span><span>tutti</span></div>
-  <div class="copy concert-copy"><h2 id="concert-title">Один.<br><em>И все.</em></h2><p>Скрипка вырывается вперёд.<br>Оркестр отвечает — и возвращает тему.</p><p>Вивальди превращает концерт в разговор: виртуозный порыв, общее движение, внезапная тишина. Этот возврат называют <em>ритурнелем</em>.</p></div>
-  <span class="scene-note">СТРУНА ВЕДЁТ · ОРКЕСТР ПОДХВАТЫВАЕТ</span>
+  <div class="copy concert-copy"><h2 id="concert-title">Один<br><em>против всех</em></h2><p>Сначала звучит солист.<br>Затем вступает оркестр.</p><p>Они подхватывают, повторяют и изменяют музыкальные темы.</p><p>Вивальди превратил этот диалог в один из самых узнаваемых приёмов барочного концерта.</p></div>
+  <span class="scene-note">КОНЦЕРТ ДЛЯ ДВУХ СКРИПОК · RV 522</span>
  </div>
 </section>
 <section class="episode seasons" id="year" data-episode="seasons" aria-label="Четыре времени года">
  <div class="stage" data-season="spring">
   <div class="art seasons-art" aria-hidden="true"><div class="season-glow"></div><div class="season-disc"><img src="assets/score.webp" alt=""><div class="disc-core"></div></div><svg class="season-ribbon" viewBox="0 0 400 800" preserveAspectRatio="none"><path d="M-80 260C250-20 580 650-60 380S300 600 480 130"/></svg><div class="ice-shards"><i></i><i></i><i></i></div><canvas class="weather"></canvas></div>
-  <span class="episode-label">III / ПРИРОДА СТАНОВИТСЯ МУЗЫКОЙ · 1725</span>
-  <div class="season-count" aria-hidden="true"><span>01</span> / 04</div>
+  <span class="episode-label">III / КОГДА МУЗЫКА СТАЛА ПОГОДОЙ · 1725</span>
+  <p class="cycle-intro">Четыре скрипичных концерта: пение птиц, гроза, осенний праздник и зимний ветер.</p><div class="season-count" aria-hidden="true"><span>01</span> / 04</div>
   <div class="season-panels">
-   <article class="season-panel is-active" data-season="spring" aria-labelledby="spring-title"><span class="season-name">LA PRIMAVERA · RV 269</span><h2 id="spring-title">Весна</h2><p class="season-poem">Свет пробивает<br><em>тишину.</em></p><p class="season-copy">Птицы отвечают скрипке. Ручей бежит, гроза разрывает воздух — и снова приходит свет.</p><span class="movement">I. ALLEGRO</span></article>
-   <article class="season-panel" data-season="summer" aria-labelledby="summer-title"><span class="season-name">L’ESTATE · RV 315</span><h2 id="summer-title">Лето</h2><p class="season-poem">Воздух дрожит.<br><em>Буря близко.</em></p><p class="season-copy">Зной утомляет людей и стада. Голоса птиц, порыв ветра, тревога перед грозой.</p><span class="movement">I. ALLEGRO NON MOLTO</span></article>
-   <article class="season-panel" data-season="autumn" aria-labelledby="autumn-title"><span class="season-name">L’AUTUNNO · RV 293</span><h2 id="autumn-title">Осень</h2><p class="season-poem">Земля кружится<br><em>в танце.</em></p><p class="season-copy">Праздник урожая. Танец уступает сну, а утром лес наполняется охотничьим ритмом.</p><span class="movement">I. ALLEGRO</span></article>
-   <article class="season-panel" data-season="winter" aria-labelledby="winter-title"><span class="season-name">L’INVERNO · RV 297</span><h2 id="winter-title">Зима</h2><p class="season-poem">Мир хрупок.<br><em>Музыка — жива.</em></p><p class="season-copy">Скользкий шаг, стук зубов, ледяной ветер. Между порывами — мечта о тепле у огня.</p><span class="movement">I. ALLEGRO NON MOLTO</span></article>
+   <article class="season-panel is-active" data-season="spring" aria-labelledby="spring-title"><span class="season-name">LA PRIMAVERA · RV 269</span><h2 id="spring-title">Весна</h2><p class="season-poem">Птицы<br><em>встречают весну</em></p><p class="season-copy">Скрипки изображают птичьи голоса, журчание ручья и внезапную грозу.</p><span class="movement">I. ALLEGRO</span></article>
+   <article class="season-panel" data-season="summer" aria-labelledby="summer-title"><span class="season-name">L’ESTATE · RV 315</span><h2 id="summer-title">Лето</h2><p class="season-poem">Гроза<br><em>приближается</em></p><p class="season-copy">Зной, тревожное ожидание, ветер и буря.</p><span class="movement">I. ALLEGRO NON MOLTO</span></article>
+   <article class="season-panel" data-season="autumn" aria-labelledby="autumn-title"><span class="season-name">L’AUTUNNO · RV 293</span><h2 id="autumn-title">Осень</h2><p class="season-poem">Время<br><em>праздновать</em></p><p class="season-copy">Крестьяне танцуют после сбора урожая. Музыка постепенно сменяет праздничный характер на более спокойный.</p><span class="movement">I. ALLEGRO</span></article>
+   <article class="season-panel" data-season="winter" aria-labelledby="winter-title"><span class="season-name">L’INVERNO · RV 297</span><h2 id="winter-title">Зима</h2><p class="season-poem">Холод<br><em>слышен</em></p><p class="season-copy">Дрожь от мороза, порывы ветра, скользкие шаги по льду.</p><span class="movement">I. ALLEGRO NON MOLTO</span></article>
   </div>
   <div class="season-progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
  </div>
@@ -58,19 +60,20 @@
  <div class="stage">
   <div class="art archive-art" aria-hidden="true"><div class="archive-light"></div><div class="manuscript-pieces"><i></i><i></i><i></i><i></i><i></i></div><svg class="return-string" viewBox="0 0 400 800" preserveAspectRatio="none"><path d="M-30 230 Q190 430 440 130"/></svg><span class="archive-year">1741</span></div>
   <span class="episode-label">IV / ЗАБВЕНИЕ И ВОЗВРАЩЕНИЕ</span>
-  <div class="copy return-copy"><div class="return-beat last-years"><h2 id="return-title">Тише.<br><em>Почти тишина.</em></h2><p>Вена, 1741. Вивальди умирает вдали от родного города. Значительная часть его наследия постепенно уходит из репертуара.</p><p>Но его мир шире четырёх концертов: оперы, сотни инструментальных концертов, духовная музыка.</p></div><div class="return-beat rediscovery"><h2>Бумага<br><em>помнит.</em></h2><p>В 1920–30-х годах в Турине собирают обширное собрание его рукописей. Исследователи и исполнители возвращают к слушателям всё больше произведений.</p><p>Не всё было забыто.<br>Многое предстояло услышать заново.</p></div></div>
-  <span class="scene-note return-note">GLORIA · ОПЕРЫ · ДУХОВНАЯ МУЗЫКА · КОНЦЕРТЫ</span>
+  <div class="gloria-light art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><span>GLORIA</span></div>
+  <div class="copy return-copy"><div class="return-beat last-years"><h2 id="return-title">1741.<br><em>Последние годы</em></h2><p>Вивальди умер в Вене в возрасте 63 лет.</p><p>Со временем значительная часть его произведений исчезла из концертного репертуара.</p></div><div class="return-beat rediscovery"><h2>1926.<br><em>Находка в Италии</em></h2><p>В монастырском собрании обнаружили множество рукописей Вивальди. Исследователи начали возвращать его музыку слушателям.</p><p>Мир заново открывал композитора, которого прежде знал лишь частично.</p></div><div class="return-beat gloria"><h2>Вивальди написал<br><em>гораздо больше</em></h2><p>Сотни концертов, оперы, сонаты и духовная музыка.</p><p>Среди его произведений — торжественная <em>Gloria</em>, написанная для хора и оркестра.</p><span class="gloria-caption">GLORIA · RV 589 · DOMINE DEUS</span></div></div>
+  <span class="scene-note return-note">РУКОПИСИ · ВОЗВРАЩЕНИЕ · GLORIA</span>
  </div>
 </section>
 <footer class="episode epilogue" id="epilogue" data-episode="epilogue" aria-labelledby="epilogue-title">
  <div class="stage">
   <div class="art epilogue-art" aria-hidden="true"><div class="portrait-medallion"><img src="assets/portrait.webp" alt=""></div><svg class="last-string" viewBox="0 0 400 800" preserveAspectRatio="none"><path d="M-30 350Q200 80 430 350"/></svg></div>
   <span class="episode-label">V / ПОСЛЕДНЕЕ ДВИЖЕНИЕ</span>
-  <div class="copy epilogue-copy"><h2 id="epilogue-title">Всё ещё<br><em>звучит.</em></h2><p>Три столетия спустя —<br>движение продолжается в тебе.</p><a class="restart" href="#prologue">К первой струне →</a></div>
+  <div class="copy epilogue-copy"><h2 id="epilogue-title">Вы знаете<br>четыре<br><em>времени года.</em></h2><p>Но теперь знаете и их автора.</p><a class="restart" href="#prologue">Послушать с начала →</a></div>
   <div class="credits"><span>ANTONIO VIVALDI · 1678–1741</span><a href="LICENSES.md">Источники и лицензии →</a></div>
  </div>
 </footer>
 </main>
-<audio id="track-a" preload="none" playsinline></audio><audio id="track-b" preload="none" playsinline></audio><div class="status" role="status" aria-live="polite"></div>
+<audio id="track-a" preload="auto" src="media/follia.mp3" playsinline></audio><audio id="track-b" preload="none" playsinline></audio><div class="status" role="status" aria-live="polite"></div>
 <noscript><p class="no-js">Музыка и превращения включаются с JavaScript. История доступна ниже.</p></noscript>
 </body></html>

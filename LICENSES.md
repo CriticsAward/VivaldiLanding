@@ -1,15 +1,24 @@
-# Музыка и атрибуция
+# Музыкальная программа и атрибуция
 
-Звучат первые 50 секунд первых частей четырёх концертов Вивальди «Времена года». Исполнение на скрипке и фонограммы — John Harrison; исходные файлы опубликованы на Wikimedia Commons под Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Композиции Антонио Вивальди находятся в общественном достоянии. MP3-фрагменты на этом сайте — перекодированные и сокращённые копии исходных Ogg-записей. Эти адаптации распространяются под CC BY-SA 4.0.
+Автор всех семи произведений — Antonio Vivaldi (1678–1741); композиции находятся в общественном достоянии. Права на конкретные исполнения проверялись отдельно. Файлы хранятся непосредственно в `media/`, внешние проигрыватели и потоковые сервисы не используются.
 
-| Сезон | Исходная запись | Источник |
-|---|---|---|
-| Весна | Vivaldi — Four Seasons 1, Spring, mvt. 1 Allegro — John Harrison violin | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga) |
-| Лето | Vivaldi — Four Seasons 2, Summer, mvt. 1 Allegro non molto — John Harrison violin | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_2_Summer_mvt_1_Allegro_non_molto_-_John_Harrison_violin.oga) |
-| Осень | Vivaldi — Four Seasons 3, Autumn, mvt. 1 Allegro — John Harrison violin | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_3_Autumn_mvt_1_Allegro_-_John_Harrison_violin.oga) |
-| Зима | Vivaldi — Four Seasons 4, Winter, mvt. 1 Allegro non molto — John Harrison violin | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_4_Winter_mvt_1_Allegro_non_molto_-_John_Harrison_violin.oga) |
+| Файл / эпизод | Запись и источник | Лицензия записи | Фрагмент исходника |
+|---|---|---|---|
+| `follia.mp3` · пролог и Венеция | La Follia, RV 63. Атрибуция издателя: **online-skills**, материал ZPE «Gatunki instrumentalne baroku — inne formy», объект R1U2HZWXMQGQ1. Имена исполнителей на странице не указаны; они не приписываются издателю. [Страница источника](https://zpe.gov.pl/a/gatunki-instrumentalne-baroku---inne-formy/D7RxbeTg) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) — лицензия указана непосредственно у объекта с этим аудиоресурсом | 00:02.100–00:47.100, 45 с; тема после начальной тишины |
+| `concerto-522.mp3` · скрипка и оркестр | Concerto for Two Violins in A minor, RV 522. **Roxana Pavel Goldstein**, **David Perry**, **Advent Chamber Orchestra**. Pandora Records / Al Goldstein Archive; [IMSLP, файл #311046](https://imslp.org/wiki/Concerto_for_2_Violins_in_A_minor,_RV_522_(Vivaldi,_Antonio)) | **(O) [EFF Open Audio License](https://imslp.org/wiki/IMSLP:EFF_Open_Audio_License)**. Атрибуция (O), имена и название сохранены также в ID3 MP3 | 00:30–01:25, 55 с; Allegro, обмен репликами скрипок и ансамбля |
+| `spring.mp3` · весна | **John Harrison**, La primavera, RV 269, I. Allegro. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | первые 50 с, прежний файл сохранён |
+| `summer.mp3` · лето | **John Harrison**, L’estate, RV 315, I. Allegro non molto. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_2_Summer_mvt_1_Allegro_non_molto_-_John_Harrison_violin.oga) | CC BY-SA 4.0 | первые 50 с, прежний файл сохранён |
+| `autumn.mp3` · осень | **John Harrison**, L’autunno, RV 293, I. Allegro. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_3_Autumn_mvt_1_Allegro_-_John_Harrison_violin.oga) | CC BY-SA 4.0 | первые 50 с, прежний файл сохранён |
+| `winter.mp3` · зима | **John Harrison**, L’inverno, RV 297, I. Allegro non molto. [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_4_Winter_mvt_1_Allegro_non_molto_-_John_Harrison_violin.oga) | CC BY-SA 4.0 | первые 50 с, прежний файл сохранён |
+| `gloria.mp3` · возвращение и финал | **Gloria in D major, RV 589**, часть **Domine Deus**. Авторство записи на Commons указано как **Monora**, дата 23 июня 2009. Имена исполнителей дополнительно не указаны. [Описание и лицензия исходной записи](https://commons.wikimedia.org/wiki/File:Dominedeus.ogg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Из двух предлагаемых лицензий выбрана CC BY-SA, не GFDL | 00:31–01:26, 55 с; вокальный эпизод из Gloria |
 
-Attribution: Antonio Vivaldi (composition); John Harrison (violin performance and sound recording); Wikimedia Commons (source archive). License for source files and adaptations: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Новые фрагменты сокращены, приведены к MP3 96 kbps, stereo, 44.1 kHz, нормализованы по громкости и имеют короткое сглаживание краёв. Музыка в сценах перекрёстно затухает средствами Web Audio, длительность перехода 600 мс. Четыре существующих файла сезонов не изменялись.
+
+Аудиофрагменты и их синхронизированные художественные адаптации распространяются на условиях исходных лицензий. Для совместимых ShareAlike-адаптаций этой версии используется CC BY-SA 4.0 с сохранением приведённых выше уведомлений: EFF OAL допускает преемников согласно пояснению IMSLP, а CC BY-SA 3.0 допускает более позднюю версию с теми же элементами лицензии. Это не изменяет самостоятельные лицензии шрифтов и исторических исходников.
+
+Не использованы для публикации: концертная запись La Follia из Isabella Stewart Gardner Museum (CC BY-NC-ND 4.0), запись RV 522 New Trinity Baroque (CC BY-NC-ND 3.0), современные коммерческие записи без разрешения. Также не подменяется Gloria RV 589 созвучным номером «Gloria» из Magnificat или Dixit Dominus.
+
+Текст о Gloria описывает произведение для хора и оркестра в целом; звучащий фрагмент — именно Domine Deus, а не вступительный хор. Это указано в сцене и подписи проигрывания.
 
 ## Исторические изображения
 
