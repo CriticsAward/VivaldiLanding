@@ -13,3 +13,8 @@ Workflow `.github/workflows/deploy.yml` публикует корень репо
 ## Музыка и лицензии
 
 50-секундные MP3-фрагменты первых частей четырёх концертов Вивальди, исполнение скрипача John Harrison. Локальные копии перекодированы из Ogg-записей Wikimedia Commons. Все четыре исходных файла размещены там под CC BY-SA 4.0; MP3-фрагменты распространяются на тех же условиях. Полная атрибуция аудиозаписей и использованных исторических изображений — в [LICENSES.md](LICENSES.md).
+
+
+## Art direction reset
+
+The experience is staged as one continuous Baroque theatre: the opening portrait, red string, manuscript, violin and seasonal imagery recur as the visitor moves through the page. Four season scores crossfade after the visitor explicitly enables sound. Motion uses scroll-linked transforms and a small Canvas 2D weather field, with reduced-motion support.

@@ -3,101 +3,110 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#e8e0ce">
-  <meta name="description" content="Одна непрерывная партитура: Венеция, Антонио Вивальди и четыре концерта, меняющие времена года.">
-  <title>Vivaldi — мир в движении</title>
+  <meta name="theme-color" content="#120e12">
+  <meta name="description" content="Антонио Вивальди. Одно движение проходит через Венецию, музыку и четыре времени года.">
+  <title>Vivaldi — четыре движения</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
-  <script defer src="script.js?v=4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,500&family=Unbounded:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5">
+  <script defer src="script.js?v=5"></script>
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="progress"><i></i></div>
-  <header class="masthead"><a class="monogram" href="#home" aria-label="В начало">V.</a><span>VENEZIA · 1678—1741</span><a href="#seasons">ЧЕТЫРЕ КОНЦЕРТА <b>↘</b></a></header>
-  <button class="sound" type="button" aria-label="Включить музыкальное сопровождение" aria-pressed="false"><span class="sound-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path class="wave" d="M16 9a5 5 0 0 1 0 6M18.5 6.5a9 9 0 0 1 0 11"/><path class="slash" d="m16 9 5 6m0-6-5 6"/></svg></span><span class="sound-label">ЗВУК · ВЫКЛ</span></button>
-  <div class="sound-hint" aria-hidden="true">нажми — и музыка пойдёт за тобой</div>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="scroll-thread" aria-hidden="true"><i></i></div>
+  <button class="sound" type="button" aria-label="Включить музыкальное сопровождение" aria-pressed="false"><svg viewBox="0 0 28 28" aria-hidden="true"><path class="speaker" d="M4 11h5l6-5v16l-6-5H4z"/><path class="wave" d="M18 10q5 4 0 8m3-11q8 7 0 14"/><path class="mute" d="m18 11 6 6m0-6-6 6"/></svg><span>ЗВУК</span></button>
+  <div class="sound-hint">Включи звук, если хочешь пройти этот путь с музыкой</div>
   <canvas class="weather" aria-hidden="true"></canvas>
-  <div class="atmosphere" aria-hidden="true"></div>
-  <main id="home">
-    <section class="opening" data-scene="opening">
-      <div class="watermark">VENEZIA</div>
-      <img class="canal" src="assets/venice.webp" alt="" fetchpriority="high">
-      <div class="opening-kicker">IL PRETE ROSSO <span>·</span> THE RED PRIEST</div>
-      <div class="hero-type"><span class="hero-overline">ANTONIO</span><h1>Vivaldi</h1><p>Вода помнит<br>движение.</p></div>
-      <figure class="portrait-wrap"><img src="assets/portrait.webp" alt="Портрет Антонио Вивальди, гравюра Франсуа Мореллона де Ла Кава, 1725" fetchpriority="high"><figcaption>FRANÇOIS MORELLON LA CAVE · 1725</figcaption></figure>
-      <span class="life-dates"><b>1678</b><i>—</i><b>1741</b></span>
-      <div class="opening-note"><span>ВЕНЕЦИЯ</span><span>45°26′ N / 12°20′ E</span></div>
-      <a class="enter" href="#life"><span>ПРОВЕДИ ВРЕМЯ ВНИЗ</span><b>↓</b></a>
-      <span class="score-line" aria-hidden="true"></span>
+  <div class="scene-light" aria-hidden="true"></div>
+  <div class="camera-space" aria-hidden="true">
+    <img class="layer canal" src="assets/venice.webp" alt="">
+    <img class="layer portrait" src="assets/portrait.webp" alt="">
+    <img class="layer score" src="assets/score.webp" alt="">
+    <img class="layer violin" src="assets/violin.webp" alt="">
+    <div class="red-thread"></div>
+    <div class="camera-vignette"></div>
+  </div>
+  <header class="topline"><a href="#opening" aria-label="В начало">A·V</a><span>VENEZIA / 1678—1741</span><a href="#year">ЧЕТЫРЕ ДВИЖЕНИЯ <b>↓</b></a></header>
+  <main>
+    <section class="scene opening" id="opening" data-scene="opening">
+      <span class="scene-index">A FILM IN FOUR MOVEMENTS</span>
+      <p class="pretitle">IL PRETE ROSSO</p>
+      <h1><span>ANTONIO</span><i>Vivaldi</i></h1>
+      <div class="portrait-caption"><b>1678</b><span>—</span><b>1741</b><small>Венеция · Вена</small></div>
+      <p class="opening-whisper">Сначала — одна струна.<br>Потом она становится миром.</p>
+      <a class="scroll-cue" href="#birth"><span>ПРОВЕДИ ВНИЗ</span><i>⌄</i></a>
+      <span class="engraving-credit">FRANÇOIS MORELLON LA CAVE · 1725</span>
     </section>
 
-    <section class="life passage" id="life" data-scene="life">
-      <span class="eyebrow">I · РОЖДЕНИЕ ГОЛОСА</span>
-      <div class="life-title"><span>Город</span><span>на воде.</span><em>Голос</em><span>из красного.</span></div>
-      <img class="score-fragment" src="assets/score.webp" alt="" loading="lazy">
-      <p class="life-lead">4 марта 1678 года. В день рождения Антонио Вивальди землетрясение сотрясает Венецию.</p>
-      <div class="life-copy"><p>Его отец, скрипач у собора Сан-Марко, первым учит сына музыке. В 1703 году Антонио принимает сан священника, но вскоре освобождается от служения у алтаря из-за слабого здоровья.</p><p>Вместо этого — скрипка, сцена и Ospedale della Pietà. Там он учит музыке девочек и пишет для их оркестра. Здесь музыка становится голосом города: быстрой, яркой, непредсказуемой.</p></div>
-      <div class="birth-mark" aria-hidden="true">04<br><small>MARZO</small></div>
+    <section class="scene birth" id="birth" data-scene="birth">
+      <span class="scene-index">01 / THE RED PRIEST</span>
+      <div class="birth-number">04</div><span class="birth-month">MARZO · 1678</span>
+      <h2>Город,<br><em>который</em><br>звучит.</h2>
+      <div class="birth-copy"><p class="lead">Венеция дала Вивальди ритм воды, звон колоколов и сцену, обращённую к миру.</p><p>Его отец, скрипач собора Сан-Марко, первым учит сына музыке. В 1703 году Антонио принимает сан священника. Вскоре он освобождается от служения у алтаря из-за недуга, который затруднял дыхание.</p><p>Вместо алтаря — скрипка, театр и Ospedale della Pietà. Здесь он преподаёт скрипку и пишет музыку для ансамблей учреждения.</p></div>
+      <span class="birth-note">Точная причина его экстренного крещения в день рождения неизвестна.</span>
     </section>
 
-    <section class="ritornello passage" data-scene="ritornello">
-      <span class="eyebrow">II · RITORNELLO</span>
-      <div class="duel"><span class="solo">SOLO</span><span class="reply">TUTTI</span><svg viewBox="0 0 1200 360" preserveAspectRatio="none" aria-hidden="true"><path d="M0 210C90 210 90 60 190 60S290 310 390 310 490 85 590 85s100 195 200 195 100-230 200-230 100 160 210 160"/><path d="M0 230C90 230 90 80 190 80S290 330 390 330 490 105 590 105s100 195 200 195 100-230 200-230 100 160 210 160"/></svg></div>
-      <p>Соло бросает вызов оркестру.<br>Оркестр отвечает.<br><i>Движение начинается снова.</i></p>
-      <div class="violin-slice"><img src="assets/violin.webp" alt="Скрипка работы Иозефа Клоца, 1794" loading="lazy"><span>JOSEPH KLOTZ · 1794</span></div>
-      <span class="ritornello-ghost">A–B–A</span>
+    <section class="scene ritornello" data-scene="ritornello">
+      <span class="scene-index">02 / RITORNELLO</span>
+      <div class="duel-word solo">SOLO</div><div class="duel-word tutti">TUTTI</div>
+      <p>Один голос выходит вперёд.<br>Оркестр отвечает.<br><em>И движение возвращается.</em></p>
+      <span class="score-caption">ИЗ МУЗЫКИ В ДВИЖЕНИЕ</span>
     </section>
 
-    <section class="season-intro passage" id="seasons" data-scene="season-intro">
-      <span class="eyebrow">III · OP. 8, NO. 1–4</span>
-      <h2>Год,<br>который<br><em>звучит.</em></h2>
-      <p>Четыре концерта для скрипки и струнных.<br>Погода, которая входит внутрь музыки.</p>
-      <span class="catalogue">RV 269 — 297</span>
-      <div class="circle-cut" aria-hidden="true"></div>
+    <section class="scene year-intro" data-scene="year-intro">
+      <span class="scene-index">03 / OP. 8 · 1725</span>
+      <h2>Год,<br>разорванный<br><em>на четыре</em></h2>
+      <p>Не четыре открытки.<br>Одна музыка, которая меняет погоду внутри тебя.</p>
     </section>
 
-    <section class="year" aria-label="Четыре времени года">
-      <div class="year-stage" aria-hidden="true">
-        <div class="season-image image-spring"><img src="assets/venice.webp" alt=""></div>
-        <div class="season-image image-summer"><img src="assets/portrait.webp" alt=""></div>
-        <div class="season-image image-autumn"><img src="assets/score.webp" alt=""></div>
-        <div class="season-image image-winter"><img src="assets/violin.webp" alt=""></div>
-        <div class="season-seal"></div><div class="season-glyph">I</div>
-        <div class="season-coordinate">45°26′ N<br>VENEZIA</div>
+    <section class="year" id="year" aria-label="Четыре времени года">
+      <div class="year-rail" aria-hidden="true">
+        <span class="year-word">L’ANNO</span>
+        <div class="year-portrait"></div>
+        <div class="season-landscape"></div>
+        <div class="season-stroke"></div>
+        <span class="year-mark">OP. 8</span>
       </div>
-      <article class="season-chapter spring-chapter" data-season="spring" data-track="0" aria-label="Весна. La primavera">
-        <span class="season-meta">I · MI MAGGIORE · RV 269</span><h3>Весна</h3><p class="italian">La primavera</p>
-        <p class="season-description">Птицы отвечают скрипке. Ручей бежит, гроза гремит — и снова свет.</p>
-        <span class="movement">I. ALLEGRO <i>♪</i></span><span class="season-poem">Весна пришла. Птицы встречают её пением.</span>
+      <article class="season spring" data-season="spring" data-track="0" aria-label="Весна. La primavera">
+        <span class="season-number">I</span><h3>Весна</h3><p class="season-italian">La primavera</p>
+        <p class="season-copy">Птицы отвечают скрипке. Ручей срывается с места, гроза разрывает воздух — и снова приходит свет.</p>
+        <span class="season-movement">I. ALLEGRO · RV 269</span><span class="season-verse">Образ по сонету к концерту: весна пришла, птицы встречают её пением.</span>
       </article>
-      <article class="season-chapter summer-chapter" data-season="summer" data-track="1" aria-label="Лето. L'estate">
-        <span class="season-meta">II · SOL MINORE · RV 315</span><h3>Лето</h3><p class="italian">L'estate</p>
-        <p class="season-description">Тяжёлый воздух. Дрожание ожидания — затем гроза, сметающая тишину.</p>
-        <span class="movement">I. ALLEGRO NON MOLTO <i>♪</i></span><span class="season-poem">Зной размягчил людей и стада. Кукушка зовёт из деревьев.</span>
+      <article class="season summer" data-season="summer" data-track="1" aria-label="Лето. L'estate">
+        <span class="season-number">II</span><h3>Лето</h3><p class="season-italian">L’estate</p>
+        <p class="season-copy">Воздух тяжелеет. Кукушка зовёт, ветер поднимается, буря захватывает всё пространство.</p>
+        <span class="season-movement">I. ALLEGRO NON MOLTO · RV 315</span><span class="season-verse">Образ по сонету к концерту: зной размягчил людей и стада.</span>
       </article>
-      <article class="season-chapter autumn-chapter" data-season="autumn" data-track="2" aria-label="Осень. L'autunno">
-        <span class="season-meta">III · FA MAGGIORE · RV 293</span><h3>Осень</h3><p class="italian">L'autunno</p>
-        <p class="season-description">Танец урожая замедляется в сон — и просыпается охотничьим ритмом.</p>
-        <span class="movement">I. ALLEGRO <i>♪</i></span><span class="season-poem">Крестьяне празднуют богатый урожай песнями и танцами.</span>
+      <article class="season autumn" data-season="autumn" data-track="2" aria-label="Осень. L'autunno">
+        <span class="season-number">III</span><h3>Осень</h3><p class="season-italian">L’autunno</p>
+        <p class="season-copy">Праздник урожая кружит в танце, смыкает глаза сном — и возвращается охотничьим ритмом.</p>
+        <span class="season-movement">I. ALLEGRO · RV 293</span><span class="season-verse">Образ по сонету к концерту: крестьяне празднуют урожай песнями и танцами.</span>
       </article>
-      <article class="season-chapter winter-chapter" data-season="winter" data-track="3" aria-label="Зима. L'inverno">
-        <span class="season-meta">IV · FA MINORE · RV 297</span><h3>Зима</h3><p class="italian">L'inverno</p>
-        <p class="season-description">Скользкий шаг, стук зубов, дождь по стеклу. В доме — тихое тепло Largo.</p>
-        <span class="movement">I. ALLEGRO NON MOLTO <i>♪</i></span><span class="season-poem">Ледяной снег. Резкий порыв ветра. Скользкий шаг.</span>
+      <article class="season winter" data-season="winter" data-track="3" aria-label="Зима. L'inverno">
+        <span class="season-number">IV</span><h3>Зима</h3><p class="season-italian">L’inverno</p>
+        <p class="season-copy">Скользкий шаг, стук зубов, дождь по стеклу. Внутри — тихое тепло Largo.</p>
+        <span class="season-movement">I. ALLEGRO NON MOLTO · RV 297</span><span class="season-verse">Образ по сонету к концерту: ледяной снег, порыв ветра и скользкий шаг.</span>
       </article>
-      <div class="year-end" aria-hidden="true"><span>И КРУГ НАЧИНАЕТСЯ СНОВА</span><i>↺</i></div>
+      <div class="year-coda"><span>UN SOLO FILO / FOUR SEASONS</span><b>↻</b></div>
     </section>
 
-    <section class="afterword passage" data-scene="afterword">
-      <span class="eyebrow">IV · ПОСЛЕЗВУЧИЕ</span><h2>Один голос.<br><em>Много форм.</em></h2>
-      <div class="forms"><p><b>КОНЦЕРТЫ</b><span>Скрипка, виолончель, флейта, фагот, мандолина.</span></p><p><b>ОПЕРА</b><span>Венецианская сцена и драматические истории.</span></p><p><b>ДУХОВНАЯ МУЗЫКА</b><span>От камерной молитвы до торжественного хора — Gloria, Juditha triumphans.</span></p><p><b>ДРУГИЕ СОЧИНЕНИЯ</b><span>Сонаты, кантаты, оратории. Рукописи заново открыли спустя почти два века.</span></p></div>
-      <p class="last-note">Вивальди умер в Вене в 1741 году, вдали от признания. Похоронен как бедный странник. Музыка пережила его — и продолжает двигаться.</p>
-      <img class="final-score" src="assets/score.webp" alt="" loading="lazy">
+    <section class="scene aftersound" data-scene="aftersound">
+      <span class="scene-index">04 / AFTERSOUND</span>
+      <h2>Музыка<br>не знала<br><em>границ.</em></h2>
+      <p>Вивальди писал концерты, оперы, сонаты, кантаты и духовную музыку — от камерной молитвы до торжественного хора.</p>
+      <div class="works"><span>GLORIA</span><span>JUDITHA TRIUMPHANS</span><span>450+ КОНЦЕРТОВ</span></div>
+      <p class="historical-end">Он умер в Вене в 1741 году и был похоронен на кладбище для бедных. Его музыка ждала нового слушателя почти два столетия.</p>
     </section>
 
-    <footer class="finale" data-scene="finale"><span class="eyebrow">VENEZIA → OVUNQUE</span><h2>Столетия<br>прошли.<br><em>Слушай.</em></h2><p>Конец партитуры — не конец звучания.</p><a href="#home">В НАЧАЛО ↑</a><div class="footer-line"><span>ANTONIO VIVALDI · 1678—1741</span><span>СОБРАНО ИЗ ЛИНИИ И ЗВУКА · <a href="LICENSES.md">ИСТОЧНИКИ И ЛИЦЕНЗИИ</a></span></div></footer>
+    <footer class="final-scene" data-scene="final">
+      <span class="scene-index">LA MUSICA CONTINUA</span>
+      <div class="final-thread"></div>
+      <h2>Струна<br>вернулась.<br><em>Слушай.</em></h2>
+      <p>Конец партитуры — не конец звучания.</p>
+      <a class="restart" href="#opening">ПРОЙТИ СНОВА ↑</a>
+      <div class="credits"><span>ANTONIO VIVALDI · 1678—1741</span><a href="LICENSES.md">ИЗОБРАЖЕНИЯ · ИСТОЧНИКИ · ЛИЦЕНЗИИ</a></div>
+    </footer>
   </main>
   <audio id="track-a" preload="none" playsinline></audio><audio id="track-b" preload="none" playsinline></audio>
   <div class="status" role="status" aria-live="polite"></div>
