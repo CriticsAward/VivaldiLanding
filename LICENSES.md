@@ -10,3 +10,14 @@
 | Зима | Vivaldi — Four Seasons 4, Winter, mvt. 1 Allegro non molto — John Harrison violin | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_4_Winter_mvt_1_Allegro_non_molto_-_John_Harrison_violin.oga) |
 
 Attribution: Antonio Vivaldi (composition); John Harrison (violin performance and sound recording); Wikimedia Commons (source archive). License for source files and adaptations: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Исторические изображения
+
+| Изображение | Автор / источник | Лицензия |
+|---|---|---|
+| Портрет Антонио Вивальди (гравюра, 1725) | François Morellon la Cave · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Antonio_Vivaldi_2.jpg) | Общественное достояние |
+| Вид на Большой канал в Венеции | Canaletto · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Canaletto_-_Het_Canal_Grande_te_Veneti%C3%AB.jpg) | Общественное достояние |
+| Рукопись Gloria RV 589 | Antonio Vivaldi · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_Gloria_RV_589_autograph.png) | Общественное достояние |
+| Скрипка Иозефа Клоца, 1794 | Joseph Klotz · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Joseph_Klotz_Violin_1794.jpg) | Общественное достояние |
+
+Изображения в `assets/` оптимизированы в WebP для загрузки на мобильных устройствах; композиция и пропорции оригиналов сохранены.
