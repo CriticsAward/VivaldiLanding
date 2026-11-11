@@ -6,3 +6,49 @@
 /* Final title-safe corrections: keep narrative clear of the portrait and fixed controls. */
 @media(min-width:701px){.opening-whisper{top:63%;right:7vw;max-width:360px}.topline{right:245px}}
 @media(max-width:700px){.opening-whisper{top:28%;right:7vw;max-width:58vw;font-size:15px}.portrait-caption{bottom:14%}.engraving-credit{bottom:16%}.topline{right:68px}.sound-hint{top:68px;right:68px}}
+/* Compact six-episode cut: reserve the long scroll only for the four seasonal transformations. */
+.birth{min-height:100svh;padding-top:10vh}
+.ritornello{height:84svh;min-height:560px}
+.year-intro{min-height:70svh;padding-top:12vh;display:flex;align-items:center}
+.year-intro-copy{position:relative;z-index:2;width:100%;margin-top:7vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,30%);align-items:end;gap:4vw}
+.year-intro h2{margin:0;max-width:100%;font-size:clamp(4.4rem,12.7vw,13rem);line-height:.82;overflow-wrap:anywhere;letter-spacing:-.075em}
+.year-intro h2 span,.year-intro h2 em{display:block}
+.year-intro h2 span:nth-child(2){font-size:.7em;margin-left:8vw;white-space:normal}
+.year-intro h2 em{font-style:italic;font-size:.78em;margin-left:18vw}
+.year-intro-copy>p{width:auto;margin:0 0 1vh;font:italic clamp(16px,1.7vw,22px)/1.48 var(--serif);color:#e1cdb1}
+.year{height:360svh}
+.season{height:78svh;min-height:520px;padding-top:10vh;padding-bottom:10vh}
+.year-coda{height:48svh}
+.aftersound{min-height:95svh;padding-top:11vh}
+.aftersound h2{margin-top:11vh}
+.aftersound>p{margin-top:5vh}
+.works{margin-top:6vh}
+.historical-end{margin-top:5vh}
+.final-scene{min-height:88svh}
+.final-scene h2{margin-top:15vh}
+@media(max-width:700px){
+  .birth{min-height:106svh}
+  .ritornello{height:78svh;min-height:540px}
+  .year-intro{min-height:66svh;padding:10vh 6vw 9vh;align-items:center}
+  .year-intro-copy{display:flex;flex-direction:column;align-items:flex-start;gap:5vh;margin-top:5vh;width:100%}
+  .year-intro h2{width:100%;max-width:100%;font-size:clamp(3.7rem,13.6vw,5.35rem);line-height:.88;letter-spacing:-.075em;overflow-wrap:normal;word-break:normal}
+  .year-intro h2 span,.year-intro h2 em{display:block;max-width:100%}
+  .year-intro h2 span:nth-child(2){font-size:.74em;margin-left:7vw;white-space:normal}
+  .year-intro h2 em{font-size:.77em;margin-left:17vw}
+  .year-intro-copy>p{width:76%;max-width:280px;margin:0 0 0 auto;font-size:17px;line-height:1.42}
+  .year{height:360svh}
+  .season{height:76svh;min-height:510px;padding-top:10vh;padding-bottom:10vh}
+  .season-number{top:14vh}
+  .year-coda{height:44svh}
+  .aftersound{min-height:100svh}
+  .aftersound h2{margin-top:14vh}
+  .aftersound>p{width:86%;font-size:17px;line-height:1.48}
+  .works{margin-top:5vh}
+  .historical-end{width:84%!important;margin:5vh 0 0 12vw!important;font-size:14px!important}
+  .final-scene{min-height:85svh}
+  .final-scene h2{margin-top:17vh}
+}
+@media(max-width:430px){.year-intro h2{font-size:clamp(3.55rem,13.5vw,4.9rem)}.year-intro h2 span:nth-child(2){font-size:.68em}.year-intro h2 em{font-size:.74em}.year-intro-copy>p{width:82%;font-size:16px}}
+@media(max-width:360px){.year-intro{padding-left:6vw;padding-right:6vw}.year-intro h2{font-size:clamp(3.3rem,13vw,4.4rem)}.year-intro h2 span:nth-child(2){font-size:.63em;margin-left:5vw}.year-intro h2 em{font-size:.7em;margin-left:13vw}.year-intro-copy{gap:4vh}.year-intro-copy>p{width:82%;font-size:15px}}
+.opening-role{position:absolute;left:10vw;top:20%;font:7px var(--sans);letter-spacing:.18em;color:#d3aa6b99}
+@media(max-width:700px){.opening-role{left:8vw;top:19%;font-size:6px;letter-spacing:.12em}}

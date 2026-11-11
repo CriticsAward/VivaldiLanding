@@ -18,3 +18,8 @@ Workflow `.github/workflows/deploy.yml` публикует корень репо
 ## Art direction reset
 
 The experience is staged as one continuous Baroque theatre: the opening portrait, red string, manuscript, violin and seasonal imagery recur as the visitor moves through the page. Four season scores crossfade after the visitor explicitly enables sound. Motion uses scroll-linked transforms and a small Canvas 2D weather field, with reduced-motion support.
+
+
+## Living Composition cut
+
+Six story episodes and three peaks (Venice becoming score, the four-season cycle, and the manuscript return) are designed for a compact scroll. The seasonal rail is approximately 3.6 viewport-heights; surrounding scenes are shorter. The repeated red string changes from city trajectory to musical line and returns in the epilogue.

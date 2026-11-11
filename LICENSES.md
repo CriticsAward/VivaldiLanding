@@ -29,3 +29,10 @@ Attribution: Antonio Vivaldi (composition); John Harrison (violin performance an
 - Ospedale della Pietà: Вивальди преподавал скрипку в учреждении и писал произведения для его ансамблей.
 - Вена: Вивальди умер там в 1741 году; источники указывают захоронение на кладбище для бедных.
 - Сезонные строки на сайте — краткие пересказы образов сонетов, сопровождавших концерты Op. 8, а не дословные цитаты.
+
+
+## Дополнительные исторические источники
+
+- Chamber Music Society of Lincoln Center, биография Вивальди и сведения о рукописях, найденных в 1930-х: https://www.chambermusicsociety.org/about-the-music/composers/antonio-vivaldi
+- Biblioteca Nazionale Universitaria di Torino, история коллекций Foà и Giordano (1922–1930): https://bnuto.cultura.gov.it/en/collections/foa-collection-giordano-collection/
+- Treccani, биография и первые занятия музыкой с отцом: https://www.treccani.it/enciclopedia/antonio-vivaldi/
