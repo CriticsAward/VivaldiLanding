@@ -53,3 +53,5 @@
 .opening-role{position:absolute;left:10vw;top:20%;font:7px var(--sans);letter-spacing:.18em;color:#d3aa6b99}
 @media(max-width:700px){.opening-role{left:8vw;top:19%;font-size:6px;letter-spacing:.12em}}
 @media(min-width:701px){.year-intro h2 span:nth-child(2){font-size:.62em;white-space:nowrap}}
+.year-intro:before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(95deg,#120e12c9 0%,#120e1294 43%,#120e1233 100%);pointer-events:none}
+.year-intro:after{z-index:0}
