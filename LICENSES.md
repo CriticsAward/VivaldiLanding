@@ -55,3 +55,11 @@
 ## Производные материалы этой версии
 
 `assets/violin-cutout.webp` — вырезанный вариант приведённой выше фотографии скрипки Joseph Klotz 1794 года. Фон удалён с помощью ImageGen; объект используется как художественная иллюстрация скрипичного концерта, а не как изображение личного инструмента Вивальди. Исходная фотография сохранена. Архитектурная арка, музыкальные траектории и атмосферная графика созданы в SVG/CSS/Canvas специально для сайта.
+
+
+## Историческая сверка новой драматургии
+
+- [Carus-Verlag: Gloria, RV 589](https://www.carus-verlag.com/en/music-scores-and-recordings/antonio-vivaldi-gloria-in-d-major-4000150.html): датировка 1713–1717; обзор наследия не представляет Gloria как сочинение после 1725 года.
+- [Nashville Symphony: Gloria RV 589](https://www.nashvillesymphony.org/classical-program-notes/antonio-vivaldi-gloria-r-589/): инструментальные концерты, оперное и духовное творчество; Gloria ориентировочно 1715–1716.
+- [Teatro La Fenice: Griselda](https://www.teatrolafenice.it/en/event/griselda-vivaldi/): опера 1735 года подтверждает продолжение оперного творчества после публикации Op. 8.
+- [Chamber Music Society of Lincoln Center: Vivaldi](https://chambermusicsociety.org/about-the-music/composers/antonio-vivaldi): концерты разных типов и вокальное творчество.

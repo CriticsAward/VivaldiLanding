@@ -15,9 +15,9 @@ function render(){
   const p=clamp((y-top)/Math.max(1,height-stageHeight));node.style.setProperty('--p',p.toFixed(4));node.style.setProperty('--turn',Math.sin(p*Math.PI*2).toFixed(4));
   if(node.classList.contains('venice')){const show=p>.48;node.classList.toggle('is-pieta',show);node.style.setProperty('--pieta',clamp((p-.35)/.25).toFixed(4));toggleBeat(node.querySelector('.priest'),!show);toggleBeat(node.querySelector('.pieta'),show)}
   if(node.classList.contains('return')){
-   const arrival=clamp((p-.12)/.55),found=p>.34,gloria=p>.72;
-   node.style.setProperty('--arrival',arrival.toFixed(4));node.style.setProperty('--scatter',(1-arrival).toFixed(4));node.style.setProperty('--gloria',clamp((p-.63)/.3).toFixed(4));node.classList.toggle('is-returned',found);node.classList.toggle('is-gloria',gloria);
-   toggleBeat(node.querySelector('.last-years'),!found);toggleBeat(node.querySelector('.rediscovery'),found&&!gloria);toggleBeat(node.querySelector('.gloria'),gloria);node.querySelector('.archive-year').textContent=found?'1926':'1741';
+   const arrival=clamp((p-.12)/.7),found=p>.48;
+   node.style.setProperty('--arrival',arrival.toFixed(4));node.style.setProperty('--scatter',(1-arrival).toFixed(4));node.classList.toggle('is-returned',found);
+   toggleBeat(node.querySelector('.last-years'),!found);toggleBeat(node.querySelector('.rediscovery'),found);node.querySelector('.archive-year').textContent=found?'1926':'1741';
   }
  });
  const g=geometry.find(g=>g.node===year),travel=Math.max(1,g.height-g.stageHeight),p=clamp((y-g.top)/travel);
@@ -28,7 +28,7 @@ function render(){
  year.style.setProperty('--exit',clamp((p-.88)/.12).toFixed(4));seasonLocal=clamp(p*4-index);year.style.setProperty('--local',seasonLocal.toFixed(4));
  if(index!==visualSeason){visualSeason=index;yearStage.dataset.season=names[index];panels.forEach((panel,i)=>{const selected=i===index;panel.classList.toggle('is-active',selected);panel.inert=!selected;panel.setAttribute('aria-hidden',String(!selected))});year.querySelector('.season-count span').textContent=`0${index+1}`;year.querySelectorAll('.season-progress i').forEach((el,i)=>el.classList.toggle('is-filled',i<=index))}
  if(inside){current=index;startWeather()}else{current=-1;stopWeather()}
- // A stable camera anchor selects the music throughout all six episodes.
+ // A stable camera anchor selects the music throughout the complete story.
  const anchor=y+vh*.35;let candidate=0;
  geometry.forEach((scene,i)=>{if(scene.top<=anchor)candidate=i});
  const margin=vh*.06;
@@ -37,9 +37,24 @@ function render(){
  musicEpisode=candidate;
  const desired=candidate<2?0:candidate===2?1:candidate===3?2+index:6;
  if(desired!==currentTrack){currentTrack=desired;if(enabled&&!document.hidden)play(desired)}
+ updateHistory(y,vh,max);
  if(location.search.includes('qa=1'))root.dataset.musicTrack=String(currentTrack);
 
 }
+const history=document.querySelector('.history'),historyButtons=[...history.querySelectorAll('button')],indicator=document.querySelector('.chapter-indicator');
+const chapterNames=['Пролог','Венеция','Скрипка и оркестр','Четыре времени года','Наследие разных лет','Последние годы','Возвращение музыки','Эпилог'];
+let lastChapter=-1;
+function updateHistory(y,vh,max){
+ const anchor=y+vh*.35;let scene=geometry[0];for(const g of geometry)if(g.top<=anchor)scene=g;
+ const name=scene.node.dataset.episode,p=clamp((y-scene.top)/Math.max(1,scene.height-scene.stageHeight));
+ const chapter=name==='return'?(p>.48?6:5):name==='epilogue'?7:geometry.indexOf(scene);
+ if(chapter!==lastChapter){lastChapter=chapter;indicator.querySelector('span').textContent=`${String(chapter+1).padStart(2,'0')} / 08`;indicator.querySelector('b').textContent=chapterNames[chapter];history.querySelector('.history-chapter').textContent=chapterNames[chapter];
+ const point=[0,1,-1,2,-1,3,4,4][chapter];history.classList.toggle('is-thematic',point<0);historyButtons.forEach((b,i)=>{if(i===point)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});}
+ const marks=historyButtons.map((b,i)=>{const g=geometry.find(g=>g.node.dataset.episode===b.dataset.target);return{y:g.top+(g.height-g.stageHeight)*Number(b.dataset.phase),x:[.06,.27,.5,.74,.94][i]}});marks.push({y:max,x:1});let progress=.06;
+ for(let i=0;i<marks.length-1;i++){const a=marks[i],b=marks[i+1];if(y>=a.y)progress=a.x+(b.x-a.x)*clamp((y-a.y)/Math.max(1,b.y-a.y));}
+ history.style.setProperty('--history-progress',progress.toFixed(4));
+}
+historyButtons.forEach(b=>b.addEventListener('click',()=>{const g=geometry.find(g=>g.node.dataset.episode===b.dataset.target);window.scrollTo({top:g.top+(g.height-g.stageHeight)*Number(b.dataset.phase),behavior:reduce.matches?'instant':'smooth'})}));
 function toggleBeat(node,visible){node.inert=!visible;node.setAttribute('aria-hidden',String(!visible))}
 addEventListener('scroll',schedule,{passive:true});addEventListener('resize',measure,{passive:true});document.fonts.ready.then(measure);addEventListener('load',measure,{once:true});measure();
 /* A maximum of two sources during a 600 ms controlled transition. Tokens invalidate
