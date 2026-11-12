@@ -107,3 +107,6 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 @media(max-width:700px){.origins-copy,.career-copy{top:40%}.origins-copy p,.career-copy p{font-size:12px;line-height:1.52}.legacy-copy{top:42%}.legacy-copy p{font-size:12px;line-height:1.5}.return-copy p{font-size:12px;line-height:1.5}.epilogue-copy{top:47%}.epilogue-copy p{font-size:11px;line-height:1.5}.epilogue-copy p+p{margin-top:9px}.credits{bottom:91px}.scene-note{bottom:86px}}
 @media(min-width:701px) and (max-width:1023px){.career-copy,.origins-copy,.legacy-copy{max-width:54%}.career-copy p,.origins-copy p,.legacy-copy p{font-size:14px}.epilogue-copy{max-width:55%}.epilogue-copy p{font-size:14px}}
 @media(min-width:1024px){.career-copy p,.legacy-copy p{font-size:15px;line-height:1.55}.epilogue-copy p{max-width:480px;font-size:14px}}
+/* Mobile scene hand-off: the next stage rises through the prologue's existing
+   10svh scroll tail, so the animation keeps its full range without a dead gap. */
+@media(max-width:700px){.origins{margin-top:-10svh}.sources-main footer{display:flex;flex-direction:column;align-items:flex-start;gap:26px;padding-top:36px}.sources-main footer .sources-back{margin-top:0;padding:0 0 5px;line-height:1.4}.sources-main footer p{margin:0;line-height:1.5}}
