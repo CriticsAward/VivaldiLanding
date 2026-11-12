@@ -8,6 +8,19 @@ export const EVENTS = [
  {id:'last',date:'1741',scene:'return',phase:0,x:.76,caption:'Последние годы · Вена'},
  {id:'archive',date:'1926',scene:'rediscovery',phase:0,x:.94,caption:'Находка и исследование рукописей'}
 ];
+/* Music cue boundaries are explicit episode starts, independent from the visual-scene resolver. */
+export const MUSIC_CUES = [
+ {id:'prologue',track:0},
+ {id:'concert',track:1},
+ {id:'seasons',track:'seasons'},
+ {id:'legacy',track:6}
+];
+export function resolveMusicTrack(geometry,y,seasonIndex=0){
+ let cue=MUSIC_CUES[0];
+ for(const item of MUSIC_CUES){const g=geometry.find(part=>part.id===item.id);if(g&&y>=g.top)cue=item;else if(g&&y<g.top)break}
+ return cue.track==='seasons'?2+clamp(Math.floor(seasonIndex),0,3):cue.track;
+}
+
 export const CHAPTERS = [
  {id:'prologue',label:'Пролог',event:'birth',music:0},
  {id:'origins',label:'Ранние годы',event:'birth',music:0},

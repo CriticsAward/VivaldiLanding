@@ -1,4 +1,4 @@
-import {resolveVisibleScene,createHistory} from './story.mjs?v=15';
+import {resolveVisibleScene,createHistory,resolveMusicTrack} from './story.mjs?v=16';
 (()=>{
 'use strict';
 const root=document.documentElement;root.classList.add('enhanced');
@@ -33,7 +33,7 @@ function render(){
  if(index!==visualSeason){visualSeason=index;yearStage.dataset.season=names[index];panels.forEach((panel,i)=>{const selected=i===index;panel.classList.toggle('is-active',selected);panel.inert=!selected;panel.setAttribute('aria-hidden',String(!selected))});year.querySelector('.season-count span').textContent=`0${index+1}`;year.querySelectorAll('.season-progress i').forEach((el,i)=>el.classList.toggle('is-filled',i<=index))}
  if(view.scene.id==='seasons'){current=index;startWeather()}else{current=-1;stopWeather()}
  // Music uses the same dominant visual scene; thematic chapters keep the established program.
- const desired=view.scene.music==='seasons'?2+index:view.scene.music;
+ const desired=resolveMusicTrack(geometry,y,index);
  if(desired!==currentTrack){currentTrack=desired;if(enabled&&!document.hidden)play(desired)}
  history.update(view);seekStoryMotion(y,vh);
  if(location.search.includes('qa=1')){root.dataset.musicTrack=String(currentTrack);root.dataset.storyScene=view.scene.id;root.dataset.storyScroll=String(y);root.dataset.storyEvent=view.event.id}
