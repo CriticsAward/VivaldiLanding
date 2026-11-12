@@ -1,4 +1,4 @@
-import {resolveVisibleScene,createHistory} from './story.mjs?v=14';
+import {resolveVisibleScene,createHistory} from './story.mjs?v=15';
 (()=>{
 'use strict';
 const root=document.documentElement;root.classList.add('enhanced');
@@ -39,7 +39,7 @@ function render(){
  if(location.search.includes('qa=1')){root.dataset.musicTrack=String(currentTrack);root.dataset.storyScene=view.scene.id;root.dataset.storyScroll=String(y);root.dataset.storyEvent=view.event.id}
 
 }
-const history=createHistory({nav:document.querySelector('.history'),indicator:document.querySelector('.chapter-indicator'),reduce,getGeometry:()=>geometry});
+const history=createHistory({nav:document.querySelector('.history'),indicator:document.querySelector('.chapter-indicator'),mobile:document.querySelector('.mobile-history'),reduce,getGeometry:()=>geometry});
 /* Paused Web Animations are sought by the camera, never run as independent loops. */
 const storyMotion=[];
 function scrub(selector,frames){const el=document.querySelector(selector);if(!el?.animate)return;const animation=el.animate(frames,{duration:1000,fill:'both',easing:'linear'});animation.pause();storyMotion.push({el,animation,scene:el.closest('.episode')})}

@@ -3,8 +3,9 @@
 export const EVENTS = [
  {id:'birth',date:'1678',scene:'prologue',phase:0,x:.06,caption:'Рождение в Венеции · ранние годы'},
  {id:'pieta',date:'1703',scene:'venice',phase:0,x:.27,caption:'Священный сан · начало работы в Pietà'},
- {id:'seasons',date:'1725',scene:'seasons',phase:0,x:.50,caption:'Публикация Op. 8 с «Временами года»'},
- {id:'last',date:'1741',scene:'return',phase:0,x:.74,caption:'Последние годы · Вена'},
+ {id:'europe',date:'1711',scene:'career',phase:0,x:.39,caption:'L’estro armonico · европейское признание'},
+ {id:'seasons',date:'1725',scene:'seasons',phase:0,x:.55,caption:'Публикация Op. 8 с «Временами года»'},
+ {id:'last',date:'1741',scene:'return',phase:0,x:.76,caption:'Последние годы · Вена'},
  {id:'archive',date:'1926',scene:'rediscovery',phase:0,x:.94,caption:'Находка и исследование рукописей'}
 ];
 export const CHAPTERS = [
@@ -12,7 +13,7 @@ export const CHAPTERS = [
  {id:'origins',label:'Ранние годы',event:'birth',music:0},
  {id:'venice',label:'Венеция и Pietà',event:'pieta',music:0,states:[{id:'ordination',from:0,to:.48},{id:'pieta',from:.48,to:1}]},
  {id:'concert',label:'Скрипка и оркестр',carry:'pieta',music:1},
- {id:'career',label:'Признание и театр',carry:'pieta',music:1},
+ {id:'career',label:'Признание и театр',event:'europe',music:1},
  {id:'seasons',label:'Четыре времени года',event:'seasons',music:'seasons'},
  {id:'legacy',label:'Наследие разных лет',carry:'seasons',music:6},
  {id:'return',label:'Последние годы',event:'last',music:6},
@@ -40,8 +41,14 @@ export function resolveVisibleScene(geometry,y,vh,previousId,safeBottom=48){
  return{scene:chapter,geometry:main.g,event:EVENTS.find(e=>e.id===(chapter.event||chapter.carry)),progress,internalState:state?.id||chapter.id,visibility:main};
 }
 export function navigationY(event,geometry){const g=geometry.find(g=>g.id===event.scene);return g.top+Math.max(0,g.height-g.stageHeight)*event.phase}
-export function createHistory({nav,indicator,reduce,getGeometry}){
+export function createHistory({nav,indicator,mobile,reduce,getGeometry}){
  const path=nav.querySelector('.history-drawn'),marker=nav.querySelector('.history-marker'),buttons=[...nav.querySelectorAll('button')];
+ const trigger=mobile.querySelector('.mobile-history-toggle'),panel=mobile.querySelector('.mobile-history-panel'),list=mobile.querySelector('.mobile-history-list');
+ const close=()=>{trigger.setAttribute('aria-expanded','false');panel.hidden=true};
+ trigger.addEventListener('click',()=>{const open=trigger.getAttribute('aria-expanded')!=='true';trigger.setAttribute('aria-expanded',String(open));panel.hidden=!open});
+ mobile.addEventListener('keydown',e=>{if(e.key==='Escape'){close();trigger.focus()}});
+ document.addEventListener('pointerdown',e=>{if(!mobile.contains(e.target))close()});
+ EVENTS.forEach(event=>{const b=document.createElement('button');b.type='button';b.dataset.event=event.id;b.innerHTML=`<span>${event.date}</span><small>${event.caption}</small>`;b.addEventListener('click',()=>{close();window.scrollTo({top:navigationY(event,getGeometry()),behavior:reduce.matches?'instant':'smooth'});trigger.focus({preventScroll:true})});list.append(b)});
  let length=0,landmarks=[],lastEvent='',lastScene='',lastLength=0,motion=[],lastChange=0;
  buttons.forEach((b,i)=>{const event=EVENTS[i];b.dataset.event=event.id;b.dataset.target=event.scene;b.dataset.phase=event.phase;b.style.setProperty('--x',`${event.x*100}%`);b.querySelector('span').textContent=event.date;b.querySelector('small').textContent=event.caption;b.addEventListener('click',()=>window.scrollTo({top:navigationY(event,getGeometry()),behavior:reduce.matches?'instant':'smooth'}))});
  function measure(){
@@ -51,6 +58,10 @@ export function createHistory({nav,indicator,reduce,getGeometry}){
  }
  function update(view){
   const {scene,event}=view,landmark=landmarks.find(p=>p.event===event);if(!landmark)return;
+  mobile.querySelector('.mobile-history-date').textContent=event.date;
+  mobile.querySelector('.mobile-history-title').textContent=scene.label;
+  mobile.querySelector('.mobile-history-progress i').style.width=`${Math.max(0,Math.min(100,(CHAPTERS.indexOf(scene)+view.progress)/CHAPTERS.length*100))}%`;
+  list.querySelectorAll('button').forEach(b=>{if(b.dataset.event===event.id)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
   if(scene.id!==lastScene){lastScene=scene.id;const chapter=CHAPTERS.indexOf(scene);indicator.querySelector('span').textContent=`${String(chapter+1).padStart(2,'0')} / ${CHAPTERS.length}`;indicator.querySelector('b').textContent=scene.label;nav.querySelector('.history-chapter').textContent=scene.label+(scene.event?'':' · тематическая сцена');nav.classList.toggle('is-thematic',!scene.event)}
   nav.dataset.scene=scene.id;nav.dataset.state=view.internalState;
   if(lastEvent===event.id)return;
