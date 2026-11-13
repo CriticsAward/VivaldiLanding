@@ -125,3 +125,11 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 @media(max-width:390px){.origins-copy{top:39%}.origins-copy p{font-size:11.5px;line-height:1.46}.origins-copy p+p{margin-top:9px}.opera-copy,.anna-copy,.ferrara-copy{top:39%}.opera-copy p,.anna-copy p,.ferrara-copy p{font-size:11.5px}}
 @media(min-width:701px){.opera-copy,.anna-copy,.ferrara-copy{top:27%;max-width:43%}.opera-copy h2,.anna-copy h2,.ferrara-copy h2{font-size:clamp(50px,6vw,86px);margin-bottom:23px}.opera-copy p,.anna-copy p,.ferrara-copy p{font-size:clamp(14px,1.2vw,17px)}.opera-theatre,.ferrara-theatre{left:30%;width:70%}.opera-curtain{bottom:0;width:25%}.opera-curtain.left{left:40%}.anna-figure{right:2%;width:52%}.anna-proscenium{right:2%;width:50%}}
 @media(prefers-reduced-motion:reduce){.opera-theatre,.ferrara-theatre,.opera-curtain,.anna-figure,.ferrara-paper{transform:none!important}.anna-voice path{stroke-dashoffset:0!important}}
+/* Documentary photographs within the existing theatrical compositions. */
+.pieta-gallery{overflow:hidden;mask-image:linear-gradient(#000 0 74%,transparent 100%)}
+.pieta-gallery img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;filter:sepia(.35) brightness(.65) contrast(1.12);transform:scale(calc(1.04 + var(--pieta,0)*.05))}
+.pieta-grille{display:none}
+.opera-theatre{filter:sepia(.48) brightness(.57) contrast(1.1);object-position:50% 50%}
+.anna-figure{object-fit:cover;object-position:36% 50%;border-radius:48% 48% 0 0;mask-image:linear-gradient(#000 0 63%,transparent 100%);filter:sepia(.32) brightness(.72) contrast(1.12) drop-shadow(0 15px 25px #09070b)}
+@media(max-width:700px){.pieta-gallery{top:12%;left:0;right:0;height:29%}.opera-theatre{height:55%;object-position:50% 50%}.anna-figure{top:3%;right:0;width:100%;height:42%;object-position:30% 50%}.anna-proscenium{height:46%}}
+@media(max-height:730px) and (max-width:700px){.pieta-gallery{top:11%;height:26%}}
