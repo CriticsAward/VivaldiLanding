@@ -17,7 +17,8 @@ function render(){
  raf=0;const y=scrollY,vh=innerHeight;view=resolveVisibleScene(geometry,y,vh,view?.scene.id,innerWidth>=1024?112:44);const max=root.scrollHeight-vh;document.querySelector('.journey i').style.height=`${clamp(y/max)*100}%`;
  geometry.forEach(({node,top,height,stageHeight})=>{
   if(y+vh<top||y>top+height)return;
-  const p=clamp((y-top)/Math.max(1,height-stageHeight));node.style.setProperty('--p',p.toFixed(4));node.style.setProperty('--turn',Math.sin(p*Math.PI*2).toFixed(4));
+  const travel=node.classList.contains('prologue')&&innerWidth<=700?height:Math.max(1,height-stageHeight);
+  const p=clamp((y-top)/travel);node.style.setProperty('--p',p.toFixed(4));node.style.setProperty('--turn',Math.sin(p*Math.PI*2).toFixed(4));
   if(node.classList.contains('venice')){const show=p>=.48;node.classList.toggle('is-pieta',show);node.style.setProperty('--pieta',clamp((p-.35)/.25).toFixed(4));toggleBeat(node.querySelector('.priest'),!show);toggleBeat(node.querySelector('.pieta'),show)}
   if(node.classList.contains('return')||node.classList.contains('rediscovery')){
    const arrival=node.classList.contains('rediscovery')?clamp((y+vh*.78-top)/(vh*.78)):0;
