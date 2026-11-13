@@ -4,6 +4,7 @@ export const EVENTS = [
  {id:'birth',date:'1678',scene:'prologue',phase:0,x:.06,caption:'Рождение в Венеции · ранние годы'},
  {id:'pieta',date:'1703',scene:'venice',phase:0,x:.27,caption:'Священный сан · начало работы в Pietà'},
  {id:'europe',date:'1711',scene:'career',phase:0,x:.39,caption:'L’estro armonico · европейское признание'},
+ {id:'opera',date:'1713',scene:'opera',phase:0,x:.46,caption:'Ottone in villa · оперный дебют'},
  {id:'seasons',date:'1725',scene:'seasons',phase:0,x:.55,caption:'Публикация Op. 8 с «Временами года»'},
  {id:'last',date:'1741',scene:'return',phase:0,x:.76,caption:'Последние годы · Вена'},
  {id:'archive',date:'1926',scene:'rediscovery',phase:0,x:.94,caption:'Находка и исследование рукописей'}
@@ -27,8 +28,11 @@ export const CHAPTERS = [
  {id:'venice',label:'Венеция и Pietà',event:'pieta',music:0,states:[{id:'ordination',from:0,to:.48},{id:'pieta',from:.48,to:1}]},
  {id:'concert',label:'Скрипка и оркестр',carry:'pieta',music:1},
  {id:'career',label:'Признание и театр',event:'europe',music:1},
+ {id:'opera',label:'Оперный дебют',event:'opera',music:1},
  {id:'seasons',label:'Четыре времени года',event:'seasons',music:'seasons'},
- {id:'legacy',label:'Наследие разных лет',carry:'seasons',music:6},
+ {id:'anna',label:'Анна Жиро',carry:'seasons',context:'с 1726',music:5},
+ {id:'legacy',label:'Наследие разных лет',carry:'seasons',context:'1735',music:6},
+ {id:'ferrara',label:'Феррарский перелом',carry:'seasons',context:'1737–1739',music:6},
  {id:'return',label:'Последние годы',event:'last',music:6},
  {id:'rediscovery',label:'Возвращение музыки',event:'archive',music:6},
  {id:'epilogue',label:'Музыкальное наследие',carry:'archive',music:6}
@@ -71,11 +75,11 @@ export function createHistory({nav,indicator,mobile,reduce,getGeometry}){
  }
  function update(view){
   const {scene,event}=view,landmark=landmarks.find(p=>p.event===event);if(!landmark)return;
-  mobile.querySelector('.mobile-history-date').textContent=event.date;
+  mobile.querySelector('.mobile-history-date').textContent=scene.context||event.date;
   mobile.querySelector('.mobile-history-title').textContent=scene.label;
   mobile.querySelector('.mobile-history-progress i').style.width=`${Math.max(0,Math.min(100,(CHAPTERS.indexOf(scene)+view.progress)/CHAPTERS.length*100))}%`;
   list.querySelectorAll('button').forEach(b=>{if(b.dataset.event===event.id)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
-  if(scene.id!==lastScene){lastScene=scene.id;const chapter=CHAPTERS.indexOf(scene);indicator.querySelector('span').textContent=`${String(chapter+1).padStart(2,'0')} / ${CHAPTERS.length}`;indicator.querySelector('b').textContent=scene.label;nav.querySelector('.history-chapter').textContent=scene.label+(scene.event?'':' · тематическая сцена');nav.classList.toggle('is-thematic',!scene.event)}
+  if(scene.id!==lastScene){lastScene=scene.id;const chapter=CHAPTERS.indexOf(scene);indicator.querySelector('span').textContent=`${String(chapter+1).padStart(2,'0')} / ${CHAPTERS.length}`;indicator.querySelector('b').textContent=scene.label;nav.querySelector('.history-chapter').textContent=scene.label+(scene.context?` · ${scene.context}`:scene.event?'':' · тематическая сцена');nav.classList.toggle('is-thematic',!scene.event)}
   nav.dataset.scene=scene.id;nav.dataset.state=view.internalState;
   if(lastEvent===event.id)return;
   const previous=lastEvent,lastDistance=lastLength,distance=landmark.distance,point=path.getPointAtLength(distance),now=performance.now();

@@ -1,4 +1,4 @@
-import {resolveVisibleScene,createHistory,resolveMusicTrack} from './story.mjs?v=16';
+import {resolveVisibleScene,createHistory,resolveMusicTrack} from './story.mjs?v=17';
 (()=>{
 'use strict';
 const root=document.documentElement;root.classList.add('enhanced');
@@ -33,7 +33,7 @@ function render(){
  year.style.setProperty('--exit',clamp((p-.88)/.12).toFixed(4));seasonLocal=clamp(p*4-index);year.style.setProperty('--local',seasonLocal.toFixed(4));
  if(index!==visualSeason){visualSeason=index;yearStage.dataset.season=names[index];panels.forEach((panel,i)=>{const selected=i===index;panel.classList.toggle('is-active',selected);panel.inert=!selected;panel.setAttribute('aria-hidden',String(!selected))});year.querySelector('.season-count span').textContent=`0${index+1}`;year.querySelectorAll('.season-progress i').forEach((el,i)=>el.classList.toggle('is-filled',i<=index))}
  if(view.scene.id==='seasons'){current=index;startWeather()}else{current=-1;stopWeather()}
- // Music uses the same dominant visual scene; thematic chapters keep the established program.
+ // Music follows explicit episode boundaries; visual scene selection remains independent.
  const desired=resolveMusicTrack(geometry,y,index);
  if(desired!==currentTrack){currentTrack=desired;if(enabled&&!document.hidden)play(desired)}
  history.update(view);seekStoryMotion(y,vh);

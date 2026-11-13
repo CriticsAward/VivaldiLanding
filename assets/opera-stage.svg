@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850" role="img" aria-label="Художественная реконструкция барочной сцены">
+<defs><radialGradient id="light"><stop stop-color="#f1c899" stop-opacity=".72"/><stop offset=".56" stop-color="#b76c51" stop-opacity=".26"/><stop offset="1" stop-color="#120f14" stop-opacity="0"/></radialGradient><linearGradient id="curtain"><stop stop-color="#200f19"/><stop offset=".38" stop-color="#793a38"/><stop offset=".7" stop-color="#361923"/><stop offset="1" stop-color="#120f14"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#b47d59" stop-opacity=".46"/><stop offset="1" stop-color="#1a1218"/></linearGradient></defs>
+<path d="M0 0H1000V850H0Z" fill="#120f14"/><ellipse cx="500" cy="330" rx="410" ry="340" fill="url(#light)"/>
+<g fill="none" stroke="#c9a67e" stroke-opacity=".42"><path d="M115 706V135Q500-130 885 135V706" stroke-width="15"/><path d="M166 699V173Q500-65 834 173V699" stroke-width="8"/><path d="M226 672V223Q500 20 774 223V672" stroke-width="5"/><path d="M286 642V278Q500 100 714 278V642" stroke-width="3"/></g>
+<path d="M0 0Q90 225 73 515Q160 441 222 165L255 0Z" fill="url(#curtain)"/><path d="M1000 0Q910 225 927 515Q840 441 778 165L745 0Z" fill="url(#curtain)"/><path d="M0 0Q475 120 1000 0V90Q500 186 0 90Z" fill="url(#curtain)"/>
+<g stroke="#e0ae77" stroke-opacity=".4" fill="none"><path d="M53 0Q225 320 70 515M105 0Q265 280 121 449M947 0Q775 320 930 515M895 0Q735 280 879 449"/><path d="M0 83Q500 193 1000 83" stroke-width="4"/></g>
+<path d="M145 602Q500 560 855 602L1000 850H0Z" fill="url(#floor)"/><path d="M145 602Q500 560 855 602" fill="none" stroke="#e1b68d" stroke-opacity=".6" stroke-width="3"/>
+<g fill="#281c20" stroke="#bb946f" stroke-opacity=".28"><path d="M350 575V405Q353 330 420 326Q490 333 490 405V575Z"/><path d="M510 575V405Q513 330 580 326Q650 333 650 405V575Z"/></g>
+<path d="M410 610Q500 570 590 610L630 850H370Z" fill="#171116" opacity=".55"/>
+</svg>

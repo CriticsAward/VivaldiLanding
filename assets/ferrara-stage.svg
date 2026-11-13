@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850" role="img" aria-label="Пустая театральная сцена, художественная реконструкция">
+<defs><radialGradient id="dying"><stop stop-color="#a8755b" stop-opacity=".34"/><stop offset=".65" stop-color="#5e3d36" stop-opacity=".12"/><stop offset="1" stop-color="#120f14" stop-opacity="0"/></radialGradient><linearGradient id="page"><stop stop-color="#c4a780"/><stop offset="1" stop-color="#705b4e"/></linearGradient></defs>
+<path d="M0 0H1000V850H0Z" fill="#120f14"/><ellipse cx="490" cy="305" rx="390" ry="350" fill="url(#dying)"/>
+<g fill="none" stroke="#87634f" stroke-opacity=".45"><path d="M87 650V120Q500-164 913 120V650" stroke-width="14"/><path d="M155 650V170Q500-78 845 170V650" stroke-width="7"/><path d="M235 640V238Q500 55 765 238V640" stroke-width="3"/></g>
+<path d="M0 0Q85 308 62 660L188 467L255 0Z" fill="#351d26"/><path d="M1000 0Q915 308 938 660L812 467L745 0Z" fill="#351d26"/>
+<path d="M140 592Q500 552 860 592L1000 850H0Z" fill="#20191b" stroke="#8d6b56" stroke-opacity=".5"/>
+<g transform="translate(550 535) rotate(-15)"><path d="M0 0H260V204H0Z" fill="url(#page)" opacity=".8"/><path d="M25 38H232M25 57H232M25 76H232M25 95H232M25 114H232M25 133H232M25 152H232" stroke="#563c36" stroke-opacity=".65" stroke-width="2"/><path d="M51 50q12-21 15 0t15 0m70 41q13-24 16 0t15 0m-64 47q10-22 14 0t15 0" fill="none" stroke="#563c36" stroke-width="5"/></g>
+<path d="M48 602Q476 515 948 603" fill="none" stroke="#d5ae81" stroke-opacity=".22" stroke-width="3"/>
+</svg>

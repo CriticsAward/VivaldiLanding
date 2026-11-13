@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 900" role="img" aria-label="Условный образ певицы XVIII века, художественная реконструкция">
+<defs><radialGradient id="halo"><stop stop-color="#e6b78c" stop-opacity=".67"/><stop offset="1" stop-color="#e6b78c" stop-opacity="0"/></radialGradient><linearGradient id="gown"><stop stop-color="#3b2126"/><stop offset=".49" stop-color="#af715e"/><stop offset="1" stop-color="#2c1b22"/></linearGradient></defs>
+<ellipse cx="370" cy="332" rx="320" ry="360" fill="url(#halo)"/>
+<path d="M299 278Q268 198 298 134Q338 65 416 99Q484 147 454 257L443 318Q394 355 328 317Z" fill="#3d2930" stroke="#d6ae86" stroke-opacity=".5" stroke-width="4"/>
+<path d="M316 198Q345 145 399 152Q438 166 444 217Q455 279 413 305Q366 322 330 276Z" fill="#c69878" opacity=".74"/>
+<path d="M335 312Q352 338 334 380Q255 421 219 462L149 850Q350 910 590 850L526 464Q478 420 406 382Q391 348 408 311Z" fill="url(#gown)" stroke="#e1bd95" stroke-opacity=".55" stroke-width="4"/>
+<path d="M222 464Q370 571 520 463M205 552Q370 664 540 551M177 712Q375 783 564 710" fill="none" stroke="#e9c29a" stroke-opacity=".35" stroke-width="5"/>
+<path d="M319 386Q370 462 422 386" fill="none" stroke="#f0d0ab" stroke-opacity=".8" stroke-width="9"/>
+<g fill="none" stroke="#e9c395" stroke-opacity=".7"><path d="M480 308Q550 302 585 258"/><path d="M475 325Q568 326 634 272"/><path d="M468 344Q568 355 658 314"/></g>
+<path d="M0 840Q370 806 740 840" fill="none" stroke="#c49572" stroke-opacity=".45" stroke-width="3"/>
+</svg>
