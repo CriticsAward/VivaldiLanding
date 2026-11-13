@@ -133,3 +133,11 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 .anna-figure{object-fit:cover;object-position:36% 50%;border-radius:48% 48% 0 0;mask-image:linear-gradient(#000 0 63%,transparent 100%);filter:sepia(.32) brightness(.72) contrast(1.12) drop-shadow(0 15px 25px #09070b)}
 @media(max-width:700px){.pieta-gallery{top:12%;left:0;right:0;height:29%}.opera-theatre{height:55%;object-position:50% 50%}.anna-figure{top:3%;right:0;width:100%;height:42%;object-position:30% 50%}.anna-proscenium{height:46%}}
 @media(max-height:730px) and (max-width:700px){.pieta-gallery{top:11%;height:26%}}
+/* Let the final chapter grow with its copy; the fixed mobile history stays clear of the footer. */
+@media(max-width:700px){
+ .epilogue{height:auto;min-height:0}
+ .epilogue .stage{position:relative;height:auto;min-height:0;padding-bottom:155px}
+ .epilogue-copy{position:relative;top:auto;left:auto;right:auto;padding:47svh 7% 0}
+ .epilogue .credits{position:relative;left:auto;right:auto;bottom:auto;margin:35px 7% 0;align-items:flex-start}
+ .anna-proscenium{top:2%;left:5%;right:5%;width:90%;height:36%;box-sizing:border-box;mask-image:none}
+}
