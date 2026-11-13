@@ -31,6 +31,7 @@ function render(){
  let index=Math.min(3,Math.floor(p*4));
  if(current>=0&&inside){const hysteresis=.012;if(index>current&&p<(current+1)/4+hysteresis)index=current;if(index<current&&p>current/4-hysteresis)index=current}
  year.style.setProperty('--exit',clamp((p-.88)/.12).toFixed(4));seasonLocal=clamp(p*4-index);year.style.setProperty('--local',seasonLocal.toFixed(4));
+ updateSeasonWorld(p);
  if(index!==visualSeason){visualSeason=index;yearStage.dataset.season=names[index];panels.forEach((panel,i)=>{const selected=i===index;panel.classList.toggle('is-active',selected);panel.inert=!selected;panel.setAttribute('aria-hidden',String(!selected))});year.querySelector('.season-count span').textContent=`0${index+1}`;year.querySelectorAll('.season-progress i').forEach((el,i)=>el.classList.toggle('is-filled',i<=index))}
  if(view.scene.id==='seasons'){current=index;startWeather()}else{current=-1;stopWeather()}
  // Music follows explicit episode boundaries; visual scene selection remains independent.
@@ -39,6 +40,17 @@ function render(){
  history.update(view);seekStoryMotion(y,vh);
  if(location.search.includes('qa=1')){root.dataset.musicTrack=String(currentTrack);root.dataset.storyScene=view.scene.id;root.dataset.storyScroll=String(y);root.dataset.storyEvent=view.event.id}
 
+}
+function updateSeasonWorld(p){
+ const ease=(a,b)=>{const x=clamp((p-a)/(b-a));return x*x*(3-2*x)},s1=ease(.20,.30),s2=ease(.45,.55),s3=ease(.70,.80);
+ const weights=[1-s1,s1*(1-s2),s2*(1-s3),s3];
+ ['--spr','--sum','--aut','--win'].forEach((key,i)=>yearStage.style.setProperty(key,weights[i].toFixed(4)));
+ yearStage.style.setProperty('--flow',p.toFixed(4));
+ const tones=[[211,231,187],[255,187,120],[237,187,111],[186,228,246]];
+ const rgb=tones[0].map((_,channel)=>Math.round(tones.reduce((sum,t,i)=>sum+t[channel]*weights[i],0)));
+ yearStage.style.setProperty('--score-color',`rgb(${rgb.join(' ')})`);
+ const flicker=reduce.matches?0:Math.max(0,1-Math.abs(p-.39)/.006)*.24;
+ yearStage.style.setProperty('--flash',flicker.toFixed(3));
 }
 const history=createHistory({nav:document.querySelector('.history'),indicator:document.querySelector('.chapter-indicator'),mobile:document.querySelector('.mobile-history'),reduce,getGeometry:()=>geometry});
 /* Paused Web Animations are sought by the camera, never run as independent loops. */
@@ -74,7 +86,7 @@ function startAudioMeter(){if(analyser&&!audioRAF&&!document.hidden)audioRAF=req
 function stopAudioMeter(){cancelAnimationFrame(audioRAF);audioRAF=0;level=0;root.style.setProperty('--audio',0)}
 function sampleAudio(t){audioRAF=0;if(!enabled||document.hidden||!analyser)return;if(t-lastAudioSample>90){lastAudioSample=t;analyser.getByteTimeDomainData(audioData);let energy=0;for(const n of audioData){const a=(n-128)/128;energy+=a*a}level+=(Math.min(.8,Math.sqrt(energy/audioData.length)*4)-level)*.4;if(view?.scene.id==='venice'||view?.scene.music===6)root.style.setProperty('--audio',level.toFixed(3));if(location.search.includes('qa=1'))root.dataset.audioEnergy=level.toFixed(4)}audioRAF=requestAnimationFrame(sampleAudio)}
 /* Weather stays inside the seasonal stage. No canvas or light overlays story text. */
-function resizeWeather(){const dpr=Math.min(devicePixelRatio||1,1.5),w=canvas.clientWidth,h=canvas.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);const count=innerWidth<701?26:48;particles=Array.from({length:count},(_,i)=>({x:(i*137.5)%w,y:(i*93.7)%h,size:1+(i%4)*.65,speed:.45+(i%7)*.12,phase:i*1.73}))}
+function resizeWeather(){const dpr=Math.min(devicePixelRatio||1,1.5),w=canvas.clientWidth,h=canvas.clientHeight;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);const count=innerWidth<701?18:32;particles=Array.from({length:count},(_,i)=>({x:(i*137.5)%w,y:(i*93.7)%h,size:1+(i%4)*.65,speed:.45+(i%7)*.12,phase:i*1.73}))}
 function startWeather(){if(!reduce.matches&&!document.hidden&&!weatherRAF){lastFrame=0;weatherRAF=requestAnimationFrame(drawWeather)}}
 function stopWeather(){cancelAnimationFrame(weatherRAF);weatherRAF=0;ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight)}
 function drawWeather(t){weatherRAF=0;if(current<0||document.hidden||reduce.matches)return;const w=canvas.clientWidth,h=canvas.clientHeight,dt=Math.min(32,t-lastFrame||16)/16;lastFrame=t;ctx.clearRect(0,0,w,h);if(location.search.includes('qa=1'))canvas.dataset.energy=level.toFixed(4);ctx.strokeStyle=['#d6eab7','#ffc08a','#e0a85d','#b7e4f4'][current];ctx.fillStyle=ctx.strokeStyle;for(const p of particles){p.y+=p.speed*dt*(current===1?4:1);p.x+=Math.sin(t*.0004+p.phase)*dt*(current===2?1.4:.4);if(p.y>h+15){p.y=-15;p.x=(p.x+137)%w}ctx.globalAlpha=.25+(p.size/4)*.35+level*.15;ctx.beginPath();if(current===0){ctx.ellipse(p.x,p.y,p.size*2,p.size,Math.sin(t*.0005+p.phase),0,Math.PI*2);ctx.fill()}else if(current===1){ctx.moveTo(p.x,p.y);ctx.lineTo(p.x-7,p.y+22);ctx.stroke()}else if(current===2){ctx.ellipse(p.x,p.y,p.size*3,p.size*1.3,t*.0006+p.phase,0,Math.PI*2);ctx.fill()}else{ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill()}}ctx.globalAlpha=1;weatherRAF=requestAnimationFrame(drawWeather)}
