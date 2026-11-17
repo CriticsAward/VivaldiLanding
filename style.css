@@ -284,3 +284,35 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 @media(prefers-reduced-motion:reduce){.mobile-history-arrow svg{transition:none}}
 
 @media(min-width:1024px){.history-chapter{top:2px;left:16px;z-index:2;padding:0 5px;background:rgba(15,12,16,.94)}}
+
+/* Keep the original curved timeline on compact desktop windows too. */
+@media(min-width:701px){
+ .history{
+  display:block;position:fixed;z-index:28;left:5.5%;right:5.5%;
+  bottom:max(18px,env(safe-area-inset-bottom));height:104px;color:#c6ab8f;
+  isolation:isolate;padding:0 14px;border:1px solid #b9957830;border-radius:8px;
+  background:rgba(15,12,16,.94);box-shadow:0 12px 34px #0005,inset 0 1px #f5ddc40a;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)
+ }
+ .history:before{content:'';position:absolute;inset:0;border-radius:inherit;background:none;z-index:-1;pointer-events:none;box-shadow:none}
+ .history-string{position:absolute;inset:0 0 auto;width:100%;height:42px;overflow:visible;pointer-events:none}
+ .history-string path{fill:none;stroke:#bd967844;stroke-width:1;vector-effect:non-scaling-stroke}
+ .history-string .history-drawn{stroke:#ed9874;stroke-width:1.4}
+ .history button{position:absolute;left:var(--path-x,var(--x));top:calc(var(--path-y,0px) + 8px);bottom:auto;transform:translateX(-50%);min-width:66px;height:48px;padding:10px 6px;border:0;background:transparent;color:inherit;cursor:pointer;font:12px var(--sans);display:flex;align-items:center;justify-content:center}
+ .history button:before{content:'';position:absolute;left:50%;top:-8px;width:1px;height:9px;background:currentColor;transform:rotate(25deg)}
+ .history button[aria-current=step]{color:#f4dbc2}
+ .history button[aria-current=step] span{font-size:17px}
+ .history button[aria-current=step]:before{height:12px;background:var(--red)}
+ .history button span{position:relative;line-height:1.3;white-space:nowrap}
+ .history button small{position:absolute;bottom:calc(100% + 14px);left:50%;width:220px;transform:translateX(-50%) translateY(5px);padding:10px 12px;color:#f4dbc2;background:#20171ff5;border:1px solid #a7775555;border-radius:3px;font:12px/1.5 var(--serif);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s}
+ .history button:hover small,.history button:focus-visible small{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+ .history button:first-of-type small{left:-8px;transform:translateY(5px)}
+ .history button:first-of-type:hover small,.history button:first-of-type:focus-visible small{transform:translateY(0)}
+ .history button:last-child small{left:auto;right:-4px;transform:translateY(5px)}
+ .history button:last-child:hover small,.history button:last-child:focus-visible small{transform:translateY(0)}
+ .history-chapter{position:absolute;left:16px;top:2px;z-index:2;padding:0 5px;background:rgba(15,12,16,.94);font:italic 12px var(--serif);color:#c7a988;pointer-events:none}
+ .history.is-thematic .history-chapter{color:#f0c89a}
+ .mobile-history,.chapter-indicator{display:none}
+ .scene-note{bottom:132px}.credits{bottom:128px}.season-progress{bottom:126px}.scroll-cue{bottom:120px}.hero-foot{bottom:14%}.return-copy{bottom:17%}
+}
+@media(prefers-reduced-motion:reduce){.history-drawn{transition:none!important}}
