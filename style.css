@@ -282,3 +282,5 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 .mobile-history-arrow svg{display:block;width:14px;height:14px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
 .mobile-history-toggle[aria-expanded=true] .mobile-history-arrow svg{transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.mobile-history-arrow svg{transition:none}}
+
+@media(min-width:1024px){.history-chapter{top:2px;left:16px;z-index:2;padding:0 5px;background:rgba(15,12,16,.94)}}
