@@ -229,3 +229,10 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 @media(max-width:700px){.rediscovery .return-copy{top:50%}}
 @media(min-width:701px) and (min-height:761px){.rediscovery .return-copy{top:25%}}
 @media(max-width:700px){.opera-theatre{top:11%}}
+@media(min-width:701px) and (min-height:761px){
+ .origins-copy,.opera-copy,.anna-copy,.ferrara-copy,.epilogue-copy{top:20%}
+ .rediscovery .return-copy{top:15%}
+}
+@media(min-width:701px) and (min-height:761px){
+ .origins-copy,.opera-copy,.anna-copy,.ferrara-copy,.epilogue-copy{top:14%}
+}
