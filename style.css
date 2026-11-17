@@ -236,3 +236,11 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 @media(min-width:701px) and (min-height:761px){
  .origins-copy,.opera-copy,.anna-copy,.ferrara-copy,.epilogue-copy{top:14%}
 }
+/* Seasonal typography follows the same axis as the biographical chapters. */
+.seasons .season-panel,.seasons .episode-label,.seasons .cycle-intro{left:7%;right:7%}
+.seasons .season-poem,.seasons .season-copy,.seasons .movement{margin-left:0}
+.seasons .season-panel h2{transform:translateY(calc(var(--local)*-10px))}
+@media(min-width:701px){
+ .seasons .season-panel,.seasons .episode-label,.seasons .cycle-intro{left:9%;right:9%}
+ .seasons .season-copy{margin-top:24px}
+}
