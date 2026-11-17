@@ -28,6 +28,8 @@
 | Вид на Большой канал в Венеции | Canaletto · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Canaletto_-_Het_Canal_Grande_te_Veneti%C3%AB.jpg) | Общественное достояние |
 | Рукопись Gloria RV 589 | Antonio Vivaldi · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vivaldi_Gloria_RV_589_autograph.png) | Общественное достояние |
 | Скрипка Иозефа Клоца, 1794 | Joseph Klotz · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Joseph_Klotz_Violin_1794.jpg) | Общественное достояние |
+| Титульный лист либретто Ottone in villa, 1713 | Antonio Vivaldi, Domenico Lalli · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Antonio_Vivaldi_-_Ottone_in_villa_-_title_page_of_the_libretto_-_Vicenza_1713.png) | Общественное достояние |
+| Либретто Dorilla in Tempe, 1726: титульный разворот и состав исполнителей | Library of Congress · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dorilla_in_Tempe_1726_Libretto.jpg) | Общественное достояние |
 
 Изображения в `assets/` оптимизированы в WebP для загрузки на мобильных устройствах; композиция и пропорции оригиналов сохранены.
 

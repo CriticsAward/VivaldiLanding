@@ -195,3 +195,36 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 }
 @media(prefers-reduced-motion:reduce){.season-world img{transform:none;will-change:auto}}
 @media(min-width:1024px){.history button{left:var(--path-x,var(--x));top:calc(var(--path-y,0px) + 8px);bottom:auto}.history button:before{top:-8px;height:9px}.history button[aria-current=step]:before{height:12px}}
+
+/* One left axis for chapter copy, chapter labels and factual image notes. */
+.city-copy p:nth-of-type(n+2){margin-left:0}
+@media(min-width:701px){
+ .episode:not(.seasons) .episode-label,.episode:not(.seasons) .scene-note{left:9%;right:9%}
+ .city-copy p:nth-of-type(n+2){margin-left:0}
+}
+/* Archival libretti replace illustrative images of a different theatre and performer. */
+.opera-theatre{left:48%;width:42%;height:73%;top:4%;object-fit:contain;object-position:center top;filter:sepia(.48) brightness(.72) contrast(1.14) drop-shadow(0 20px 22px #080608);transform:translateY(calc((1 - var(--p))*18px)) rotate(-4deg)}
+.anna-figure{top:10%;right:9%;width:42%;height:49%;object-fit:contain;object-position:center top;border-radius:0;mask-image:linear-gradient(#000 0 72%,transparent 100%);filter:sepia(.46) brightness(.78) contrast(1.16) drop-shadow(0 20px 22px #080608)}
+@media(max-width:700px){
+ .opera-theatre{left:24%;top:5%;width:66%;height:39%;object-fit:contain}
+ .anna-figure{top:6%;right:10%;width:80%;height:34%;object-fit:contain;object-position:center top}
+}
+@media(prefers-reduced-motion:reduce){.opera-theatre,.anna-figure{transform:none!important}}
+@media(max-width:700px){
+ .opera-theatre{top:17%;height:25%}
+ .anna-figure{top:13%;height:27%}
+}
+@media(min-width:701px){.opera-theatre{left:56%;width:32%}}
+@media(min-width:701px) and (max-height:760px){
+ .opera-copy,.anna-copy,.ferrara-copy{top:19%}
+ .opera-copy h2,.anna-copy h2,.ferrara-copy h2{font-size:clamp(50px,5vw,72px);margin-bottom:15px}
+ .opera-copy p,.anna-copy p,.ferrara-copy p{font-size:14px;line-height:1.45}
+ .opera-copy p+p,.anna-copy p+p,.ferrara-copy p+p{margin-top:10px}
+}
+@media(min-width:701px) and (max-height:760px){
+ .origins-copy{top:19%}
+ .rediscovery .return-copy{top:19%}
+ .epilogue-copy{top:20%}
+}
+@media(max-width:700px){.rediscovery .return-copy{top:50%}}
+@media(min-width:701px) and (min-height:761px){.rediscovery .return-copy{top:25%}}
