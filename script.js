@@ -1,4 +1,4 @@
-import {resolveVisibleScene,createHistory,resolveMusicTrack} from './story.mjs?v=17';
+import {resolveVisibleScene,createHistory,resolveMusicTrack} from './story.mjs?v=18';
 (()=>{
 'use strict';
 const root=document.documentElement;root.classList.add('enhanced');
@@ -37,7 +37,7 @@ function render(){
  // Music follows explicit episode boundaries; visual scene selection remains independent.
  const desired=resolveMusicTrack(geometry,y,index);
  if(desired!==currentTrack){currentTrack=desired;if(enabled&&!document.hidden)play(desired)}
- history.update(view);seekStoryMotion(y,vh);
+ history.update(view,y);seekStoryMotion(y,vh);
  if(location.search.includes('qa=1')){root.dataset.musicTrack=String(currentTrack);root.dataset.storyScene=view.scene.id;root.dataset.storyScroll=String(y);root.dataset.storyEvent=view.event.id}
 
 }

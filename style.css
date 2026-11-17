@@ -194,3 +194,4 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
  .season-world:after{background:linear-gradient(180deg,#101b2080 0%,transparent 22%,#1019208c 34%,#101920d9 60%,#101920e8 100%)}
 }
 @media(prefers-reduced-motion:reduce){.season-world img{transform:none;will-change:auto}}
+@media(min-width:1024px){.history button{left:var(--path-x,var(--x));top:calc(var(--path-y,0px) + 8px);bottom:auto}.history button:before{top:-8px;height:9px}.history button[aria-current=step]:before{height:12px}}
