@@ -201,7 +201,6 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
 .city-copy p:nth-of-type(n+2){margin-left:0}
 @media(min-width:701px){
  .episode:not(.seasons) .episode-label,.episode:not(.seasons) .scene-note{left:9%;right:9%}
- .city-copy p:nth-of-type(n+2){margin-left:0}
 }
 /* Archival libretti replace illustrative images of a different theatre and performer. */
 .opera-theatre{left:48%;width:42%;height:73%;top:4%;object-fit:contain;object-position:center top;filter:sepia(.48) brightness(.72) contrast(1.14) drop-shadow(0 20px 22px #080608);transform:translateY(calc((1 - var(--p))*18px)) rotate(-4deg)}
@@ -254,36 +253,13 @@ html:not(.enhanced) .city-beat{position:relative;opacity:1;visibility:visible;ma
  .seasons .movement{margin-top:16px}
 }
 
-/* Desktop history is a detached control surface, with enough clearance from the final scenes. */
-@media(min-width:1024px){
- .history{
-  left:5.5%;
-  right:5.5%;
-  bottom:max(18px,env(safe-area-inset-bottom));
-  height:104px;
-  padding:0 14px;
-  border:1px solid #b9957830;
-  border-radius:8px;
-  background:rgba(15,12,16,.94);
-  box-shadow:0 12px 34px #0005, inset 0 1px #f5ddc40a;
-  -webkit-backdrop-filter:blur(8px);
-  backdrop-filter:blur(8px);
- }
- .history:before{inset:0;border-radius:inherit;background:none;box-shadow:none}
- .history-string{top:8px;height:42px}
- .history button{height:48px}
- .history-chapter{top:8px;left:16px}
- .history button:first-of-type small{left:-8px}
- .history button:last-child small{right:-4px}
-}
+
 /* Mobile history toggle uses a fine chevron that aligns with the date and chapter label. */
 .mobile-history-toggle{grid-template-columns:auto minmax(0,1fr) 18px;column-gap:11px}
 .mobile-history-arrow{display:grid;place-items:center;width:18px;height:18px;font-size:0;line-height:0;color:#d6a580}
 .mobile-history-arrow svg{display:block;width:14px;height:14px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
 .mobile-history-toggle[aria-expanded=true] .mobile-history-arrow svg{transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.mobile-history-arrow svg{transition:none}}
-
-@media(min-width:1024px){.history-chapter{top:2px;left:16px;z-index:2;padding:0 5px;background:rgba(15,12,16,.94)}}
 
 /* Keep the original curved timeline on compact desktop windows too. */
 @media(min-width:701px){
