@@ -21,10 +21,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Prepare public site
+        run: |
+          mkdir -p _site
+          cp 404.html index.html sources.html style.css script.js story.mjs LICENSES.md _site/
+          cp -R assets media _site/
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
