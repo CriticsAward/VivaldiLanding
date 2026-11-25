@@ -118,6 +118,7 @@ document.addEventListener("click", (event) => {
 });
 
 let scrollScheduled = false;
+let scrollSettleTimer;
 function updateVisibleChapter() {
   scrollScheduled = false;
   const readingLine = innerHeight * .44;
@@ -128,11 +129,14 @@ function updateVisibleChapter() {
   if (visible) setChapter(visible);
 }
 window.addEventListener("scroll", () => {
+  clearTimeout(scrollSettleTimer);
+  scrollSettleTimer = setTimeout(updateVisibleChapter, 180);
   if (scrollScheduled) return;
   scrollScheduled = true;
   requestAnimationFrame(updateVisibleChapter);
 }, { passive: true });
 window.addEventListener("resize", updateVisibleChapter, { passive: true });
+window.addEventListener("scrollend", updateVisibleChapter, { passive: true });
 
 playButton.addEventListener("click", async () => {
   if (audio.some((player) => !player.paused)) {
@@ -198,8 +202,7 @@ audio.forEach((player) => player.addEventListener("play", updatePlayLabel));
 audio.forEach((player) => player.addEventListener("pause", updatePlayLabel));
 window.addEventListener("pagehide", stopAudio);
 window.addEventListener("hashchange", () => {
-  const chapter = chapters.find(({ id }) => id === location.hash.slice(1));
-  if (chapter) setChapter(chapter);
+  requestAnimationFrame(updateVisibleChapter);
 });
 
 const initial = chapters.find(({ id }) => id === location.hash.slice(1));
