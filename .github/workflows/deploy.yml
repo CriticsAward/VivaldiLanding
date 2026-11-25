@@ -26,6 +26,10 @@ jobs:
           mkdir -p _site
           cp 404.html index.html sources.html style.css script.js story.mjs LICENSES.md _site/
           cp -R assets media _site/
+          mkdir -p _site/beethoven
+          cp beethoven/index.html beethoven/style.css beethoven/script.js beethoven/story.mjs beethoven/sources.html beethoven/LICENSES.md beethoven/README.md _site/beethoven/
+          if [ -d beethoven/assets ]; then cp -R beethoven/assets _site/beethoven/; fi
+          if [ -d beethoven/media ]; then cp -R beethoven/media _site/beethoven/; fi
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
