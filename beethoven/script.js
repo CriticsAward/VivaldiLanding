@@ -117,11 +117,22 @@ document.addEventListener("click", (event) => {
   if (!chapterMenu.hidden && !event.target.closest(".chapter-menu,.chapter-trigger")) toggleMenu(false);
 });
 
-const observer = new IntersectionObserver((entries) => {
-  const mostVisible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-  if (mostVisible) setChapter(chapters.find((chapter) => chapter.id === mostVisible.target.id));
-}, { rootMargin: "-18% 0px -30% 0px", threshold: [0, .12, .3, .55, .8] });
-chapters.forEach(({ id }) => observer.observe(document.getElementById(id)));
+let scrollScheduled = false;
+function updateVisibleChapter() {
+  scrollScheduled = false;
+  const readingLine = innerHeight * .44;
+  const visible = chapters.find(({ id }) => {
+    const bounds = document.getElementById(id).getBoundingClientRect();
+    return bounds.top <= readingLine && bounds.bottom > readingLine;
+  });
+  if (visible) setChapter(visible);
+}
+window.addEventListener("scroll", () => {
+  if (scrollScheduled) return;
+  scrollScheduled = true;
+  requestAnimationFrame(updateVisibleChapter);
+}, { passive: true });
+window.addEventListener("resize", updateVisibleChapter, { passive: true });
 
 playButton.addEventListener("click", async () => {
   if (audio.some((player) => !player.paused)) {
